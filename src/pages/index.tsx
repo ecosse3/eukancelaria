@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import styles from '../styles/Home.module.css';
+import Logo from '../assets/images/logo.png';
 
 const Home: NextPage = () => {
   return (
@@ -37,6 +37,43 @@ const Home: NextPage = () => {
         {/*     </ul> */}
         {/* </div> */}
       </div>
+
+      <section id="about" className="dark-grey-text">
+        <div className="container pt-20 pb-5">
+          <div className="row justify-content-center">
+            {/* <div className="col-md-7 mb-4"> */}
+            {/*   <div className="view"> */}
+            {/*     <img src="/lawyer_woman/2x/Zasob4@2x.png" className="img-fluid mr-5" /> */}
+            {/*   </div> */}
+            {/* </div> */}
+            <div className="col-md-10 text-center d-flex align-items-center">
+              <div>
+                <p className="mb-5 wow fadeInRight slow">
+                  <Image src={Logo} width="250" height="104" alt="" />
+                </p>
+
+                <p className="wow fadeInRight slow text-muted">
+                  Kancelaria oferuje kompleksową obsługę prawną przedsiębiorców, jak i
+                  świadczy usługi prawne dla osób fizycznych. Poza nieustannym dążeniem do
+                  doskonałości zawodowej, przy jednoczesnym poszanowaniu zasad etyki,
+                  pamiętamy, że każdy Klient i każda sprawa wymaga szczególnego,
+                  zindywidualizowanego podejścia.
+                </p>
+
+                <a href="o-nas.html">
+                  <button
+                    type="button"
+                    className="btn btn-rounded btn-color text-white my-4 wow fadeInUp slower"
+                  >
+                    Dowiedz się więcej
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </>
   );
