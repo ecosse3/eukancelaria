@@ -18,6 +18,7 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 import Logo from '../assets/images/logo.png';
 import LogoMobile from '../assets/images/logo-slogan.png';
 
@@ -109,15 +110,13 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              <span className="sr-only">Kancelaria Radcy Prawnego - Ewa Urbanowicz</span>
-              <div className="hidden lg:block">
-                <Image src={Logo} alt="" width={907} height={376} />
-              </div>
-              <div className="lg:hidden relative w-24 h-14">
-                <Image src={LogoMobile} alt="" layout="fill" objectFit="contain" />
-              </div>
-            </a>
+            <span className="sr-only">Kancelaria Radcy Prawnego - Ewa Urbanowicz</span>
+            <div className="hidden lg:block">
+              <Image src={Logo} alt="" width={907} height={376} />
+            </div>
+            <div className="lg:hidden relative w-24 h-14">
+              <Image src={LogoMobile} alt="" layout="fill" objectFit="contain" />
+            </div>
           </div>
 
           <div className="-mr-2 -my-2 md:hidden">
@@ -273,21 +272,22 @@ const Header = () => {
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {services.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
-                              className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-100"
-                            >
-                              <item.icon
-                                className="flex-shrink-0 h-6 w-6 text-secondary"
-                                aria-hidden="true"
-                              />
-                              <div className="ml-4">
-                                <p className="text-base font-medium text-gray-900">
-                                  {item.name}
-                                </p>
-                              </div>
-                            </a>
+                            <Link key={item.name} href={item.href}>
+                              <a
+                                href={item.href}
+                                className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-100"
+                              >
+                                <item.icon
+                                  className="flex-shrink-0 h-6 w-6 text-secondary"
+                                  aria-hidden="true"
+                                />
+                                <div className="ml-4">
+                                  <p className="text-base font-medium text-gray-900">
+                                    {item.name}
+                                  </p>
+                                </div>
+                              </a>
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -298,26 +298,30 @@ const Header = () => {
             </Popover>
 
             {/* Kontakt */}
-            <a
-              href="#"
-              className="relative p-3 text-base uppercase font-medium text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200"
-            >
-              Kontakt
-            </a>
+            <Link href="#">
+              <a
+                href="#"
+                className="relative p-3 text-base uppercase font-medium text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200"
+              >
+                Kontakt
+              </a>
+            </Link>
           </Popover.Group>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <a
-              href="#"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-6 py-4 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-secondary transition-transform hover:-translate-y-1 hover:shadow-slate-400"
-            >
-              <PhoneIcon
-                width={20}
-                height={20}
-                className="text-white mr-2"
-                aria-hidden="true"
-              />
-              605-357-507
-            </a>
+            <Link href="#">
+              <a
+                href="#"
+                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-6 py-4 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-secondary transition-transform hover:-translate-y-1 hover:shadow-slate-400"
+              >
+                <PhoneIcon
+                  width={20}
+                  height={20}
+                  className="text-white mr-2"
+                  aria-hidden="true"
+                />
+                605-357-507
+              </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -351,19 +355,21 @@ const Header = () => {
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {about.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
-                    >
-                      <item.icon
-                        className="flex-shrink-0 h-6 w-6 text-secondary"
-                        aria-hidden="true"
-                      />
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        {item.name}
-                      </span>
-                    </a>
+                    <Link key={item.name} href={item.href}>
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                      >
+                        <item.icon
+                          className="flex-shrink-0 h-6 w-6 text-secondary"
+                          aria-hidden="true"
+                        />
+                        <span className="ml-3 text-base font-medium text-gray-900">
+                          {item.name}
+                        </span>
+                      </a>
+                    </Link>
                   ))}
                 </nav>
               </div>
@@ -371,28 +377,32 @@ const Header = () => {
             <div className="py-6 px-5 space-y-6">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                 {services.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
-                    {item.name}
-                  </a>
+                  <Link key={item.name} href={item.href}>
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="text-base font-medium text-gray-900 hover:text-gray-700"
+                    >
+                      {item.name}
+                    </a>
+                  </Link>
                 ))}
               </div>
               <div>
-                <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-secondary"
-                >
-                  <PhoneIcon
-                    width="18"
-                    height="18"
-                    className="text-white mr-2"
-                    aria-hidden="true"
-                  />
-                  605-357-507
-                </a>
+                <Link href="#">
+                  <a
+                    href="#"
+                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-secondary"
+                  >
+                    <PhoneIcon
+                      width="18"
+                      height="18"
+                      className="text-white mr-2"
+                      aria-hidden="true"
+                    />
+                    605-357-507
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
