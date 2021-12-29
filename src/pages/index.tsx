@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Logo from '../assets/images/logo.png';
+import Button from '../components/Button';
 
 const Home: NextPage = () => {
   return (
@@ -47,7 +48,7 @@ const Home: NextPage = () => {
             zawodowej, przy jednoczesnym poszanowaniu zasad etyki, pamiętamy, że każdy
             Klient i każda sprawa wymaga szczególnego, zindywidualizowanego podejścia.
           </span>
-          <button className="btn">Dowiedz się więcej</button>
+          <Button background="secondary">Dowiedz się więcej</Button>
         </div>
       </main>
     </React.Fragment>
