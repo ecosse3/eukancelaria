@@ -41,9 +41,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": [
-          "**/*.stories.tsx"
-        ]
+        "devDependencies": true
       }
     ],
     "import/no-cycle": 1,
