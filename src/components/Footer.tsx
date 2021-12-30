@@ -1,102 +1,156 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import Button from './Button';
+import { services } from './Header';
 
 const Footer = () => (
-  <footer id="footer" className="page-footer font-small gradient-footer text-white">
-    {/* style="background-color: #16273f;" */}
-    <div className="bg-blue-900">
-      <div className="container">
-        <div className="row py-4 flex align-items-center ml-lg-1">
-          <div className="col-md-6 col-lg-6 mb-4 mb-md-0 text-md-left">
-            <h6 className="mb-0 font-roboto">Bądź z nami w kontakcie!</h6>
-          </div>
-
-          <div className="col-md-6 col-lg-6 text-center text-md-right">
-            <h6 className="mb-0 font-roboto">
-              Napisz na adres email:{' '}
-              <a href="mailto:ewa.urbanowicz@eukancelaria.pl">
-                ewa.urbanowicz@eukancelaria.pl
-              </a>
-            </h6>
-          </div>
+  <footer className="text-center lg:text-left bg-primary text-white">
+    <div className="border-b border-white border-opacity-5">
+      <div className="flex max-w-7xl mx-auto justify-center items-center lg:justify-between py-6">
+        <div className="mr-12 hidden lg:block">
+          <span>Bądź z nami w kontakcie!</span>
+        </div>
+        <div className="flex justify-center">
+          <a href="#!" className="mr-6 text-white hover:text-facebook">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fab"
+              data-icon="facebook-f"
+              className="w-2.5"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+            >
+              <path
+                fill="currentColor"
+                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+              ></path>
+            </svg>
+          </a>
+          <a href="#!" className="mr-6 text-white hover:text-twitter">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fab"
+              data-icon="twitter"
+              className="w-4"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+              ></path>
+            </svg>
+          </a>
+          <a href="#!" className="mr-6 text-white hover:text-linkedin">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fab"
+              data-icon="linkedin-in"
+              className="w-3.5"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path
+                fill="currentColor"
+                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+              ></path>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
-
-    <div className="container text-left text-md-left mt-5">
-      <div className="row mt-3">
-        <div className="col-md-4 col-lg-4 col-xl-4 mb-4">
-          <h6 className="text-uppercase font-weight-bold">O Kancelarii</h6>
-          <hr className="w-16 accent-2 mb-4 mt-2 d-inline-block mx-auto" />
-          <p>
+    <div className="max-w-7xl mx-auto py-10 text-center md:text-left">
+      <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="">
+          <h6
+            className="
+            uppercase
+            font-semibold
+            mb-4
+            flex
+            items-center
+            justify-center
+            md:justify-start
+          "
+          >
+            O Kancelarii
+          </h6>
+          <p className="max-w-sm mx-auto md:max-w-none">
             Kancelaria oferuje kompleksową obsługę prawną przedsiębiorców, jak i świadczy
             usługi prawne dla osób fizycznych.
           </p>
-          <p>
+          <p className="mt-4">
             Wykonanie:{' '}
-            <span className="font-semibold">
-              <a href="https://kvsky.pl/">kvsky.pl</a>
-            </span>
+            <Link href="https://www.linkedin.com/in/lukasz-kurpiewski/">
+              <a className="hover:text-secondary-400">Łukasz Kurpiewski</a>
+            </Link>
           </p>
         </div>
-
-        <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4">
-          <h6 className="text-uppercase font-weight-bold">Zakres usług</h6>
-          <hr className="w-16 accent-2 mb-4 mt-2 d-inline-block mx-auto" />
-          <p className="my-2">
-            <a href="zakres-uslug/prawo-cywilne.html">Prawo cywilne</a>
-          </p>
-          <p className="my-3">
-            <a href="zakres-uslug/prawo-rodzinne-i-opiekuncze.html">
-              Prawo rodzinne i opiekuńcze
-            </a>
-          </p>
-          <p className="my-3">
-            <a href="zakres-uslug/prawo-pracy.html">Prawo pracy</a>
-          </p>
-          <p className="my-3">
-            <a href="zakres-uslug/prawo-medyczne.html">Prawo medyczne</a>
-          </p>
-          <p className="my-3">
-            <a href="zakres-uslug/prawo-gospodarcze-i-spolek.html">
-              Prawo gospodarcze i spółek
-            </a>
-          </p>
-          <p className="my-3">
-            <a href="zakres-uslug/prawo-upadlosciowe.html">Prawo upadłościowe</a>
-          </p>
-          <p className="my-3">
-            <a href="zakres-uslug/odpowiedzialnosc-dyscyplinarna.html">
-              Odpowiedzialność dyscyplinarna
-            </a>
-          </p>
-          <p className="my-3">
-            <a href="zakres-uslug/rodo.html">Ochrona danych osobowych</a>
-          </p>
+        <div tw="flex flex-col justify-center mx-auto md:ml-20">
+          <h6 tw="uppercase font-semibold mb-4">Zakres usług</h6>
+          <div tw="grid grid-cols-2 px-6 md:(block px-0)">
+            {services.map((service) => (
+              <p key={service.name} className="mt-4">
+                <Link href={service.href}>
+                  <a tw="flex text-left mr-4 text-white hover:text-secondary-400">
+                    <service.icon
+                      className="flex-shrink-0 h-6 w-6 text-secondary-400"
+                      aria-hidden="true"
+                    />
+                    <span className="ml-4">{service.name}</span>
+                  </a>
+                </Link>
+              </p>
+            ))}
+          </div>
         </div>
-
-        <div className="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
-          <h6 className="text-uppercase font-weight-bold">Kontakt</h6>
-          <hr className="white w-16 accent-2 mb-4 mt-0 d-inline-block mx-auto" />
-          <p className="my-3">
-            <FontAwesomeIcon icon="home" className="w-3" /> Warszawa, Lublin
-          </p>
-          <p className="my-3">
-            <FontAwesomeIcon icon="envelope" className="w-3" />
-            <a href="mailto:ewa.urbanowicz@eukancelaria.pl">
-              ewa.urbanowicz@eukancelaria.pl
-            </a>
-          </p>
-          <p className="my-3">
-            <FontAwesomeIcon icon="phone" className="w-3" /> Warszawa, Lublin + 48 605 457
-            507
-          </p>
+        <div className="flex flex-col items-center md:items-start">
+          <h6 className="uppercase font-semibold mb-4">Newsletter</h6>
+          <input
+            type="text"
+            name="name"
+            placeholder="Imię"
+            className="form-control block px-3 py-1.5 text-base font-normal text-gray-700
+            bg-white bg-clip-padding border border-solid border-gray-300 rounded transition
+            ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:ring-2 focus:ring-secondary-400 focus:outline-none"
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="twoj@email.com"
+            className="form-control block mt-4 px-3 py-1.5 text-base font-normal text-gray-700
+            bg-white bg-clip-padding border border-solid border-gray-300 rounded transition
+            ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:ring-2 focus:ring-secondary-400 focus:outline-none"
+          />
+          <Button className="mt-4" background="secondary">
+            Zapisz się
+          </Button>
         </div>
       </div>
     </div>
-
-    <div className="footer-copyright text-center py-3">
-      © 2020 Copyright:
-      <a href="https://eukancelaria.pl/"> Ewa Urbanowicz</a>
+    {/* Panel */}
+    <div className="p-6 bg-primary border-t border-white border-opacity-5">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto justify-between">
+        {/* Left Panel */}
+        <div className="order-2 md:order-1 mt-4 md:mt-0">
+          <span>© 2022 Wszelkie prawa zastrzeżone: </span>
+          <span className="text-white font-semibold">Ewa Urbanowicz</span>
+        </div>
+        {/* Right Panel */}
+        <div tw="flex flex-col gap-2 order-1 md:order-2 md:gap-6 md:flex-row">
+          <Link href="polityka-prywatnosci">
+            <a className="hover:text-secondary-400">Polityka prywatności</a>
+          </Link>
+          <Link href="regulamin">
+            <a className="hover:text-secondary-400">Regulamin</a>
+          </Link>
+        </div>
+      </div>
     </div>
   </footer>
 );
