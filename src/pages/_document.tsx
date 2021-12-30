@@ -33,7 +33,7 @@ class MyDocument extends Document {
           <link
             rel="preload"
             as="style"
-            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
           />
           <link
             rel="preload"
@@ -43,17 +43,17 @@ class MyDocument extends Document {
           <link
             rel="preload"
             as="style"
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
           />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
             media="print"
           />
           <noscript>
             <link
               rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+              href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
             />
           </noscript>
         </Head>
