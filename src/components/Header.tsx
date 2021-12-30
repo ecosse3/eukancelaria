@@ -21,6 +21,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import Logo from '../assets/images/logo.png';
 import LogoMobile from '../assets/images/logo-slogan.png';
+import PrawoCywilneImg from '../assets/icons/prawo-cywilne/prawo-cywilne.png';
+import RodoImg from '../assets/icons/rodo/rodo.png';
+import PrawoPracyImg from '../assets/icons/prawo-pracy/prawo_pracy.png';
+import PrawoRodzinneImg from '../assets/icons/prawo-rodzinne/prawo-rodzinne-i-opiekuncze.png';
+import PrawoMedyczneJpg from '../assets/icons/prawo-medyczne/prawo_medyczne.png';
+import PrawoGospodarczeImg from '../assets/icons/prawo-gospodarcze-i-spolek/prawo-gospodarcze-i-spolek.png';
+import PrawoUpadloscioweImg from '../assets/icons/prawo-upadlosciowe/prawo_upadlosciowe.png';
+import OdpowiedzialnoscImg from '../assets/icons/odpowiedzialnosc-dyscyplinarna/odpowiedzialnosc_dyscyplinarna.png';
 
 const about = [
   {
@@ -43,50 +51,74 @@ const callsToAction = [
     href: '#',
     icon: FontAwesomeIcon,
     iconName: ['fab', 'facebook'],
-    color: 'text-blue-600'
+    color: 'text-facebook'
+  },
+  {
+    name: 'Twitter',
+    href: '#',
+    icon: FontAwesomeIcon,
+    iconName: ['fab', 'twitter'],
+    color: 'text-twitter'
+  },
+  {
+    name: 'LinkedIn',
+    href: '#',
+    icon: FontAwesomeIcon,
+    iconName: ['fab', 'linkedin'],
+    color: 'text-linkedin'
   }
 ];
 
-const services = [
+export const services = [
   {
     name: 'Prawo cywilne',
-    href: '#',
-    icon: BookOpenIcon
+    href: '/zakres-uslug/prawo-cywilne',
+    icon: BookOpenIcon,
+    image: PrawoCywilneImg
   },
   {
     name: 'Prawo rodzinne i opiekuńcze',
     href: '#',
-    icon: UserGroupIcon
+    icon: UserGroupIcon,
+    image: PrawoRodzinneImg
   },
   {
     name: 'Prawo pracy',
     href: '#',
-    icon: BriefcaseIcon
+    icon: BriefcaseIcon,
+    image: PrawoPracyImg
   },
   {
     name: 'Prawo medyczne',
     href: '#',
-    icon: HeartIcon
+    icon: HeartIcon,
+    image: PrawoMedyczneJpg
   },
   {
     name: 'Prawo gospodarcze i spółek',
     href: '#',
-    icon: OfficeBuildingIcon
+    icon: OfficeBuildingIcon,
+    image: PrawoGospodarczeImg
   },
   {
     name: 'Prawo upadłościowe',
     href: '#',
-    icon: ArrowCircleDownIcon
+    icon: ArrowCircleDownIcon,
+    image: PrawoUpadloscioweImg
   },
   {
     name: 'Odpowiedzialność dyscyplinarna',
     href: '#',
-    icon: IdentificationIcon
+    icon: IdentificationIcon,
+    image: OdpowiedzialnoscImg,
+    cardSize: '1/2'
   },
   {
     name: 'Ochrona danych osobowych',
     href: '#',
-    icon: AcademicCapIcon
+    icon: AcademicCapIcon,
+    image: RodoImg,
+    cardSize: '1/2'
   }
 ];
 
@@ -120,34 +152,33 @@ const Header = () => {
           </div>
 
           <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-secondary rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-500 hover:bg-gray-100">
+            <Popover.Button className="bg-secondary-400 rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-500 hover:bg-gray-100">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
 
           <Popover.Group as="nav" className="hidden md:flex space-x-10">
-            <a
-              href="#"
-              className="relative p-3 text-base uppercase font-medium text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200"
-            >
-              Strona główna
-            </a>
+            <Link href="#">
+              <a className="relative p-3 text-base uppercase font-rubik font-medium text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200">
+                Strona główna
+              </a>
+            </Link>
             <Popover className="relative">
               {({ open }) => (
                 <>
                   <Popover.Button
                     className={classNames(
-                      'text-primary group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary'
+                      'text-primary group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary-400'
                     )}
                   >
-                    <span className="relative p-3 text-base uppercase font-medium text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200">
+                    <span className="relative p-3 text-base uppercase font-rubik font-medium text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200">
                       O Kancelarii
                     </span>
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-gray-600' : 'text-primary',
-                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                        'h-5 w-5 group-hover:text-gray-500'
                       )}
                       aria-hidden="true"
                     />
@@ -166,24 +197,22 @@ const Header = () => {
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {about.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
-                              className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-100"
-                            >
-                              <item.icon
-                                className="flex-shrink-0 h-6 w-6 text-secondary"
-                                aria-hidden="true"
-                              />
-                              <div className="ml-4">
-                                <p className="text-base font-medium text-gray-900">
-                                  {item.name}
-                                </p>
-                                <p className="mt-1 text-sm text-gray-500">
-                                  {item.description}
-                                </p>
-                              </div>
-                            </a>
+                            <Link key={item.name} href={item.href}>
+                              <a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-100">
+                                <item.icon
+                                  className="flex-shrink-0 h-6 w-6 text-secondary-400"
+                                  aria-hidden="true"
+                                />
+                                <div className="ml-4">
+                                  <p className="text-base font-medium text-gray-900">
+                                    {item.name}
+                                  </p>
+                                  <p className="mt-1 text-sm text-gray-500">
+                                    {item.description}
+                                  </p>
+                                </div>
+                              </a>
+                            </Link>
                           ))}
                         </div>
 
@@ -215,22 +244,22 @@ const Header = () => {
                             <ul role="list" className="mt-4 space-y-4">
                               {recentPosts.map((post) => (
                                 <li key={post.id} className="text-base truncate">
-                                  <a
-                                    href={post.href}
-                                    className="font-medium text-gray-900 hover:text-gray-700"
-                                  >
-                                    {post.name}
-                                  </a>
+                                  <Link href={post.href}>
+                                    <a className="font-medium text-gray-900 hover:text-gray-700">
+                                      {post.name}
+                                    </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
-                          <div className="mt-5 text-sm">
-                            <a href="#" className="font-medium text-secondary">
-                              {' '}
-                              Zobacz wszystkie wpisy{' '}
-                              <span aria-hidden="true">&rarr;</span>
-                            </a>
+                          <div className="mt-5 text-sm font-medium text-secondary-400">
+                            <Link href="/blog">
+                              <a>
+                                Zobacz wszystkie wpisy{' '}
+                                <span aria-hidden="true">&rarr;</span>
+                              </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -245,15 +274,20 @@ const Header = () => {
                 <>
                   <Popover.Button
                     className={classNames(
-                      'text-primary group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary'
+                      'text-primary group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary-400'
                     )}
                   >
-                    <span className="relative p-3 text-base uppercase font-medium text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200">
+                    <span
+                      className="relative p-3 text-base uppercase font-rubik font-medium text-primary
+                      transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0
+                      before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500
+                      hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200"
+                    >
                       Zakres usług
                     </span>
                     <ChevronDownIcon
                       className={classNames(
-                        'text-gray-500 ml-2 h-5 w-5 group-hover:text-gray-500'
+                        'text-gray-500 h-5 w-5 group-hover:text-gray-500'
                       )}
                       aria-hidden="true"
                     />
@@ -278,7 +312,7 @@ const Header = () => {
                                 className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-100"
                               >
                                 <item.icon
-                                  className="flex-shrink-0 h-6 w-6 text-secondary"
+                                  className="flex-shrink-0 h-6 w-6 text-secondary-400"
                                   aria-hidden="true"
                                 />
                                 <div className="ml-4">
@@ -301,17 +335,19 @@ const Header = () => {
             <Link href="#">
               <a
                 href="#"
-                className="relative p-3 text-base uppercase font-medium text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200"
+                className="relative p-3 text-base uppercase font-medium font-rubik text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200"
               >
                 Kontakt
               </a>
             </Link>
           </Popover.Group>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          <div className="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0">
             <Link href="#">
               <a
                 href="#"
-                className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-6 py-4 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-secondary transition-transform hover:-translate-y-1 hover:shadow-slate-400"
+                className="ml-8 whitespace-nowrap inline-flex items-center justify-center
+                px-6 py-4 border border-transparent rounded-full shadow-sm text-base font-medium
+                text-white bg-secondary-400 transition-transform hover:-translate-y-1 hover:shadow-slate-400 hover:bg-secondary-500"
               >
                 <PhoneIcon
                   width={20}
@@ -346,7 +382,7 @@ const Header = () => {
                   <Image alt="Logo" layout="fill" objectFit="contain" src={Logo} />
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary">
+                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary-400">
                     <span className="sr-only">Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
@@ -362,7 +398,7 @@ const Header = () => {
                         className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                       >
                         <item.icon
-                          className="flex-shrink-0 h-6 w-6 text-secondary"
+                          className="flex-shrink-0 h-6 w-6 text-secondary-400"
                           aria-hidden="true"
                         />
                         <span className="ml-3 text-base font-medium text-gray-900">
@@ -392,7 +428,7 @@ const Header = () => {
                 <Link href="#">
                   <a
                     href="#"
-                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-secondary"
+                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-secondary-400"
                   >
                     <PhoneIcon
                       width="18"
