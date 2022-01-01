@@ -96,7 +96,7 @@ const Footer = () => (
           <div tw="grid grid-cols-2 px-6 md:(block px-0)">
             {services.map((service) => (
               <p key={service.name} className="mt-4">
-                <Link href={service.href}>
+                <Link href={service.href} passHref>
                   <a tw="flex text-left mr-4 text-white hover:text-secondary-400">
                     <service.icon
                       className="flex-shrink-0 h-6 w-6 text-secondary-400"
@@ -143,10 +143,10 @@ const Footer = () => (
         </div>
         {/* Right Panel */}
         <div tw="flex flex-col gap-2 order-1 md:order-2 md:gap-6 md:flex-row">
-          <Link href="polityka-prywatnosci">
+          <Link href="/polityka-prywatnosci">
             <a className="hover:text-secondary-400">Polityka prywatności</a>
           </Link>
-          <Link href="regulamin">
+          <Link href="/regulamin">
             <a className="hover:text-secondary-400">Regulamin</a>
           </Link>
         </div>
