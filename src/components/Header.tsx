@@ -122,7 +122,7 @@ export const services = [
   }
 ];
 
-const recentPosts = [
+const suggestedPosts = [
   { id: 1, name: 'Odmowa udzielenia urlopu okolicznościowego', href: '#' },
   {
     id: 2,
@@ -144,7 +144,7 @@ const Header = () => {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <span className="sr-only">Kancelaria Radcy Prawnego - Ewa Urbanowicz</span>
             <div className="hidden lg:block">
-              <Image src={Logo} alt="" width={907} height={376} />
+              <Image src={Logo} alt="" width={907 / 4} height={376 / 4} />
             </div>
             <div className="lg:hidden relative w-24 h-14">
               <Image src={LogoMobile} alt="" layout="fill" objectFit="contain" />
@@ -158,7 +158,7 @@ const Header = () => {
             </Popover.Button>
           </div>
 
-          <Popover.Group as="nav" className="hidden md:flex space-x-10">
+          <Popover.Group as="nav" className="hidden md:flex space-x-4">
             <Link href="#">
               <a className="relative p-3 text-base uppercase font-rubik font-medium text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200">
                 Strona główna
@@ -193,7 +193,7 @@ const Header = () => {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                    <Popover.Panel className="absolute z-10 -ml-4 mt-8 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {about.map((item) => (
@@ -239,10 +239,10 @@ const Header = () => {
                         <div className="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
                           <div>
                             <h3 className="text-sm tracking-wide font-medium text-gray-500 uppercase">
-                              Ostatnie wpisy
+                              Polecane wpisy
                             </h3>
                             <ul role="list" className="mt-4 space-y-4">
-                              {recentPosts.map((post) => (
+                              {suggestedPosts.map((post) => (
                                 <li key={post.id} className="text-base truncate">
                                   <Link href={post.href}>
                                     <a className="font-medium text-gray-900 hover:text-gray-700">
@@ -253,11 +253,16 @@ const Header = () => {
                               ))}
                             </ul>
                           </div>
-                          <div className="mt-5 text-sm font-medium text-secondary-400">
+                          <div className="inline-block group mt-2 text-sm font-medium text-secondary-400">
                             <Link href="/blog">
                               <a>
                                 Zobacz wszystkie wpisy{' '}
-                                <span aria-hidden="true">&rarr;</span>
+                                <span
+                                  className="text-xl group-hover:ml-2 transition-all"
+                                  aria-hidden="true"
+                                >
+                                  &rarr;
+                                </span>
                               </a>
                             </Link>
                           </div>
@@ -332,11 +337,8 @@ const Header = () => {
             </Popover>
 
             {/* Kontakt */}
-            <Link href="#">
-              <a
-                href="#"
-                className="relative p-3 text-base uppercase font-medium font-rubik text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200"
-              >
+            <Link href="/kontakt">
+              <a className="relative p-3 text-base uppercase font-medium font-rubik text-primary transition-all duration-500 before:content-[''] before:absolute before:h-[0.20rem] before:w-0 before:bg-primary before:top-0 before:opacity-0 before:transition-all before:duration-500 hover:before:w-4/12 hover:before:opacity-100 hover:transition-all hover:ease hover:duration-200">
                 Kontakt
               </a>
             </Link>
