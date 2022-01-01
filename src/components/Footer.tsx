@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArrowRightIcon } from '@heroicons/react/solid';
 import Button from './Button';
 import { services } from './Header';
 
@@ -7,7 +8,10 @@ const Footer = () => (
     <div className="border-b border-white border-opacity-5">
       <div className="flex max-w-7xl mx-auto justify-center items-center lg:justify-between py-6">
         <div className="mr-12 hidden lg:block">
-          <span>Bądź z nami w kontakcie!</span>
+          <span className="flex items-center">
+            Bądź ze mną w kontakcie! Odwiedź moje media społecznościowe{' '}
+            <ArrowRightIcon className="ml-1 h-3 w-3" />
+          </span>
         </div>
         <div className="flex justify-center">
           <a href="#!" className="mr-6 text-white hover:text-facebook">
