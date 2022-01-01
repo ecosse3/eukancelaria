@@ -4,6 +4,7 @@ import tw from 'twin.macro';
 // Interfaces
 interface IProps {
   background: 'primary' | 'secondary';
+  size?: 'normal' | 'big';
   children: React.ReactText;
   className?: string & React.CSSProperties;
   onClick?: () => void;
@@ -11,7 +12,7 @@ interface IProps {
 
 // Component
 
-const StdButton = styled.button(({ background }: IProps) => [
+const StdButton = styled.button(({ background, size }: IProps) => [
   tw`
   text-xs
   text-white
@@ -28,15 +29,23 @@ const StdButton = styled.button(({ background }: IProps) => [
   hover:transition-all
   hover:shadow-xl`,
   background === 'primary' && tw`bg-primary`,
-  background === 'secondary' && tw`bg-secondary-400 hover:bg-secondary-500`
+  background === 'secondary' && tw`bg-secondary-400 hover:bg-secondary-500`,
+  size === 'big' && tw`text-sm py-5 px-7`
 ]);
 
-const Button = ({ background, className, children, onClick }: IProps) => (
+const Button = ({
+  background,
+  className,
+  children,
+  onClick,
+  size = 'normal'
+}: IProps) => (
   <StdButton
     background={background}
     className={className}
     onClick={onClick}
     type="button"
+    size={size}
   >
     {children}
   </StdButton>
