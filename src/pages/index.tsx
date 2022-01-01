@@ -7,6 +7,34 @@ import Header, { services } from '../components/Header';
 import Logo from '../assets/images/logo.png';
 import Button from '../components/Button';
 import ServiceCard, { TSize } from '../components/ServiceCard';
+import PostCard from '../components/PostCard';
+
+const recentPosts = [
+  {
+    id: 1,
+    title: 'Odmowa udzielenia urlopu okolicznościowego',
+    description:
+      'Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.',
+    url: 'https://facebook.com/EwaUrbanowicz/post/1',
+    date: 2
+  },
+  {
+    id: 2,
+    title: 'Czy żołnierz ma prawo do bycia offline?',
+    description:
+      'Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Proin eget tortor risus. Donec rutrum congue leo eget malesuada.',
+    url: 'https://facebook.com/EwaUrbanowicz/post/2',
+    date: 5
+  },
+  {
+    id: 3,
+    title: 'Upadłość konsumencka - czym tak naprawdę jest',
+    description:
+      'Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat. Donec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.',
+    url: 'https://facebook.com/EwaUrbanowicz/post/2',
+    date: 6
+  }
+];
 
 // Component
 const Home: NextPage = () => {
@@ -77,15 +105,35 @@ const Home: NextPage = () => {
             ))}
           </div>
         </section>
+        <section
+          id="recentPosts"
+          className="flex flex-col max-w-7xl mx-auto py-16 items-center"
+        >
+          <h2 className="text-slate-600 text-3xl font-bold">Ostatnie wpisy</h2>
+          <hr className="h-0.5 w-14 my-8 bg-black" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 lg:mx-0 gap-5 md:gap-10 lg:gap-14">
+            {recentPosts.map((post) => (
+              <PostCard
+                key={post.id}
+                title={post.title}
+                description={post.description}
+                url={post.url}
+                date={post.date}
+              />
+            ))}
+          </div>
+        </section>
         {/* Map */}
         <section id="map" className="relative text-right max-h-[535px] h-full w-full">
           <div className="relative overflow-hidden bg-transparent pointer-events-none">
             <iframe
+              loading="lazy"
               className="w-[110%] -mt-14 -ml-[46px]"
               width="100%"
               height="535"
               id="gmap_canvas"
-              src="https://www.google.com/maps/d/u/0/embed?mid=1iL9CSbyniVGmFayaPAof7i5jd_MBv-2-&usp=sharing&output=embed&iwloc=near"
+              aria-label="Map"
+              src="https://www.google.com/maps/d/u/0/embed?mid=1iL9CSbyniVGmFayaPAof7i5jd_MBv-2-&output=embed&iwloc=near"
               frameBorder="0"
               scrolling="no"
               marginHeight={0}
