@@ -1,17 +1,9 @@
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import {
-  AcademicCapIcon,
-  ArrowCircleDownIcon,
-  BookOpenIcon,
-  BriefcaseIcon,
-  HeartIcon,
-  IdentificationIcon,
   InformationCircleIcon,
   MenuIcon,
-  OfficeBuildingIcon,
   PhoneIcon,
-  UserGroupIcon,
   UsersIcon,
   XIcon
 } from '@heroicons/react/outline';
@@ -21,14 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import Logo from '../assets/images/logo.png';
 import LogoMobile from '../assets/images/logo-slogan.png';
-import PrawoCywilneImg from '../assets/icons/prawo-cywilne/prawo-cywilne.png';
-import RodoImg from '../assets/icons/rodo/rodo.png';
-import PrawoPracyImg from '../assets/icons/prawo-pracy/prawo_pracy.png';
-import PrawoRodzinneImg from '../assets/icons/prawo-rodzinne/prawo-rodzinne-i-opiekuncze.png';
-import PrawoMedyczneJpg from '../assets/icons/prawo-medyczne/prawo_medyczne.png';
-import PrawoGospodarczeImg from '../assets/icons/prawo-gospodarcze-i-spolek/prawo-gospodarcze-i-spolek.png';
-import PrawoUpadloscioweImg from '../assets/icons/prawo-upadlosciowe/prawo_upadlosciowe.png';
-import OdpowiedzialnoscImg from '../assets/icons/odpowiedzialnosc-dyscyplinarna/odpowiedzialnosc_dyscyplinarna.png';
+import services from '../data/services';
 
 const about = [
   {
@@ -66,59 +51,6 @@ const callsToAction = [
     icon: FontAwesomeIcon,
     iconName: ['fab', 'linkedin'],
     color: 'text-linkedin'
-  }
-];
-
-export const services = [
-  {
-    name: 'Prawo cywilne',
-    href: '/zakres-uslug/prawo-cywilne',
-    icon: BookOpenIcon,
-    image: PrawoCywilneImg
-  },
-  {
-    name: 'Prawo rodzinne i opiekuńcze',
-    href: '#',
-    icon: UserGroupIcon,
-    image: PrawoRodzinneImg
-  },
-  {
-    name: 'Prawo pracy',
-    href: '#',
-    icon: BriefcaseIcon,
-    image: PrawoPracyImg
-  },
-  {
-    name: 'Prawo medyczne',
-    href: '#',
-    icon: HeartIcon,
-    image: PrawoMedyczneJpg
-  },
-  {
-    name: 'Prawo gospodarcze i spółek',
-    href: '#',
-    icon: OfficeBuildingIcon,
-    image: PrawoGospodarczeImg
-  },
-  {
-    name: 'Prawo upadłościowe',
-    href: '#',
-    icon: ArrowCircleDownIcon,
-    image: PrawoUpadloscioweImg
-  },
-  {
-    name: 'Odpowiedzialność dyscyplinarna',
-    href: '#',
-    icon: IdentificationIcon,
-    image: OdpowiedzialnoscImg,
-    cardSize: '1/2'
-  },
-  {
-    name: 'Ochrona danych osobowych',
-    href: '#',
-    icon: AcademicCapIcon,
-    image: RodoImg,
-    cardSize: '1/2'
   }
 ];
 

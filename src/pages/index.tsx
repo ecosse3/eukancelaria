@@ -3,11 +3,12 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Footer from '../components/Footer';
-import Header, { services } from '../components/Header';
+import Header from '../components/Header';
 import Logo from '../assets/images/logo.png';
 import Button from '../components/Button';
 import ServiceCard, { TSize } from '../components/ServiceCard';
 import PostCard from '../components/PostCard';
+import services from '../data/services';
 
 const recentPosts = [
   {

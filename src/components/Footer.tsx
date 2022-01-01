@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/solid';
+import services from '../data/services';
 import Button from './Button';
-import { services } from './Header';
 
 const Footer = () => (
   <footer className="text-center lg:text-left bg-primary text-white">
