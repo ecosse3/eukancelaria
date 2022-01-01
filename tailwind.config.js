@@ -16,6 +16,9 @@ module.exports = {
         facebook: '#3B5998',
         twitter: '#00ACEE',
         linkedin: '#0E76A8'
+      },
+      margin: {
+        18: '4.5rem'
       }
     },
     fontFamily: {
