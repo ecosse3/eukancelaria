@@ -22,6 +22,8 @@ const services: IService[] = [
   {
     id: 1,
     name: 'Prawo cywilne',
+    description:
+      'Oferujemy usługi z zakresu prawa cywilnego, w tym m.in. dochodzenie należności w postępowaniu sądowym i egzekucyjnym oraz reprezentowanie stron w postępowaniu sądowym.',
     slug: 'prawo-cywilne',
     href: '/zakres-uslug/prawo-cywilne',
     icon: BookOpenIcon,
@@ -41,6 +43,8 @@ const services: IService[] = [
   {
     id: 2,
     name: 'Prawo rodzinne i opiekuńcze',
+    description:
+      'Oferujemy usługi z zakresu prawa rodzinnego i opiekuńczego, w tym m.in. sprawy o rozwód, separację, unieważnienie małżeństwa czy o ustanowienie rozdzielności majątkowej między małżonkami.',
     slug: 'prawo-rodzinne-i-opiekuncze',
     href: '/zakres-uslug/prawo-rodzinne-i-opiekuncze',
     icon: UserGroupIcon,
@@ -67,6 +71,8 @@ const services: IService[] = [
   {
     id: 3,
     name: 'Prawo pracy',
+    description:
+      'Oferujemy usługi z zakresu prawa pracy, w tym m.in. reprezentowanie pracowników i pracodawców oraz zastępstwo procesowe przed sądami pracy.',
     slug: 'prawo-pracy',
     href: '/zakres-uslug/prawo-pracy',
     icon: BriefcaseIcon,
@@ -87,6 +93,8 @@ const services: IService[] = [
   {
     id: 4,
     name: 'Prawo medyczne',
+    description:
+      'Oferujemy usługi z zakresu prawa medycznego, w tym m.in. obsługa prawna podmiotów leczniczych oraz udzielanie porad prawnych w zakresie szeroko rozumianego prawa medycznego: praw pacjenta, praw i obowiązków lekarzy, odpowiedzialności za tzw. błędy medyczne i sposobu dochodzenia roszczeń z tym związanych.',
     slug: 'prawo-medyczne',
     href: '/zakres-uslug/prawo-medyczne',
     icon: HeartIcon,
@@ -105,6 +113,8 @@ const services: IService[] = [
   {
     id: 5,
     name: 'Prawo gospodarcze i spółek',
+    description:
+      'Oferujemy usługi z zakresu prawa gospodarczego i spółek, w tym m.in. sporządzanie umów z zakresu prawa cywilnego, gospodarczego, prawa spółek handlowych oraz reprezentowanie przed Krajowym Rejestrem Sądowym.',
     slug: 'prawo-gospodarcze-i-spolek',
     href: '/zakres-uslug/prawo-gospodarcze-i-spolek',
     icon: OfficeBuildingIcon,
@@ -127,6 +137,8 @@ const services: IService[] = [
   {
     id: 6,
     name: 'Prawo upadłościowe',
+    description:
+      'Oferujemy usługi z zakresu prawa upadłościowego, w tym m.in. obsługa dłużnika, w tym również byłego przedsiębiorcy lub członka zarządu spółki, w zakresie postępowania restrukturyzacyjnego lub ogłoszenia upadłości.',
     slug: 'prawo-upadlosciowe',
     href: '/zakres-uslug/prawo-upadlosciowe',
     icon: ArrowCircleDownIcon,
@@ -145,6 +157,8 @@ const services: IService[] = [
   {
     id: 7,
     name: 'Odpowiedzialność dyscyplinarna',
+    description:
+      'Oferujemy usługi z zakresu odpowiadzialności dyscyplinarnej, w tym m.in. postępowania z zakresu odpowiadzialności dyscyplinarnej adwokatów, prokuratorów czy sędziów.',
     slug: 'odpowiedzialnosc-dyscyplinarna',
     href: '/zakres-uslug/odpowiedzialnosc-dyscyplinarna',
     icon: IdentificationIcon,
@@ -160,6 +174,8 @@ const services: IService[] = [
   {
     id: 8,
     name: 'Ochrona danych osobowych',
+    description:
+      'Oferujemy usługi z zakresu ochrony danych osobowych, w tym m.in. wdrażanie obowiązujących w Unii Europejskiej przepisów dotyczących RODO.',
     slug: 'rodo',
     href: '/zakres-uslug/rodo',
     icon: AcademicCapIcon,
