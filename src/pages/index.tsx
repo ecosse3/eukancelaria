@@ -9,6 +9,7 @@ import Button from '../components/Button';
 import ServiceCard, { TSize } from '../components/ServiceCard';
 import PostCard from '../components/PostCard';
 import services from '../data/services';
+import Link from 'next/link';
 
 const recentPosts = [
   {
@@ -86,7 +87,11 @@ const Home: NextPage = () => {
             zawodowej, przy jednoczesnym poszanowaniu zasad etyki, pamiętamy, że każdy
             Klient i każda sprawa wymaga szczególnego, zindywidualizowanego podejścia.
           </span>
-          <Button background="secondary">Dowiedz się więcej</Button>
+          <Link href="/o-nas">
+            <a>
+              <Button background="secondary">Dowiedz się więcej</Button>
+            </a>
+          </Link>
         </section>
         {/* Services */}
         <section
