@@ -38,10 +38,14 @@ const Footer = ({ withMap }: IProps) => (
               <ArrowRightIcon className="ml-1 h-3 w-3" />
             </span>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-6">
             {links.facebook ? (
               <Link href={links.facebook}>
-                <a className="mr-6 text-white hover:text-facebook">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-facebook"
+                >
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -62,7 +66,11 @@ const Footer = ({ withMap }: IProps) => (
             ) : null}
             {links.twitter ? (
               <Link href={links.twitter}>
-                <a className="mr-6 text-white hover:text-twitter">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-twitter"
+                >
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -83,7 +91,11 @@ const Footer = ({ withMap }: IProps) => (
             ) : null}
             {links.linkedin ? (
               <Link href={links.linkedin}>
-                <a className="mr-6 text-white hover:text-linkedin">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-linkedin"
+                >
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -153,26 +165,27 @@ const Footer = ({ withMap }: IProps) => (
             </div>
           </div>
           <div className="flex flex-col items-center md:items-start">
-            <h6 className="uppercase font-semibold mb-4">Newsletter</h6>
-            <input
-              type="text"
-              name="name"
-              placeholder="Imię"
-              className="form-control block px-3 py-1.5 text-base font-normal text-gray-700
-            bg-white bg-clip-padding border border-solid border-gray-300 rounded transition
-            ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:ring-2 focus:ring-secondary-400 focus:outline-none"
-            />
-            <input
-              type="text"
-              name="email"
-              placeholder="twoj@email.com"
-              className="form-control block mt-4 px-3 py-1.5 text-base font-normal text-gray-700
-            bg-white bg-clip-padding border border-solid border-gray-300 rounded transition
-            ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:ring-2 focus:ring-secondary-400 focus:outline-none"
-            />
-            <Button className="mt-4" background="secondary">
-              Zapisz się
-            </Button>
+            <h4 className="text-base uppercase font-semibold mb-4">Newsletter</h4>
+            <h6 className="text-sm">Już wkrótce!</h6>
+            {/* <input */}
+            {/*   type="text" */}
+            {/*   name="name" */}
+            {/*   placeholder="Imię" */}
+            {/*   className="form-control block px-3 py-1.5 text-base font-normal text-gray-700 */}
+            {/* bg-white bg-clip-padding border border-solid border-gray-300 rounded transition */}
+            {/* ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:ring-2 focus:ring-secondary-400 focus:outline-none" */}
+            {/* /> */}
+            {/* <input */}
+            {/*   type="text" */}
+            {/*   name="email" */}
+            {/*   placeholder="twoj@email.com" */}
+            {/*   className="form-control block mt-4 px-3 py-1.5 text-base font-normal text-gray-700 */}
+            {/* bg-white bg-clip-padding border border-solid border-gray-300 rounded transition */}
+            {/* ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:ring-2 focus:ring-secondary-400 focus:outline-none" */}
+            {/* /> */}
+            {/* <Button className="mt-4" background="secondary"> */}
+            {/*   Zapisz się */}
+            {/* </Button> */}
           </div>
         </div>
       </div>
@@ -185,14 +198,14 @@ const Footer = ({ withMap }: IProps) => (
             <span className="text-white font-semibold">Ewa Urbanowicz</span>
           </div>
           {/* Right Panel */}
-          <div tw="flex flex-col gap-2 order-1 md:order-2 md:gap-6 md:flex-row">
-            <Link href="/polityka-prywatnosci">
-              <a className="hover:text-secondary-400">Polityka prywatności</a>
-            </Link>
-            <Link href="/regulamin">
-              <a className="hover:text-secondary-400">Regulamin</a>
-            </Link>
-          </div>
+          {/* <div tw="flex flex-col gap-2 order-1 md:order-2 md:gap-6 md:flex-row"> */}
+          {/*   <Link href="/polityka-prywatnosci"> */}
+          {/*     <a className="hover:text-secondary-400">Polityka prywatności</a> */}
+          {/*   </Link> */}
+          {/*   <Link href="/regulamin"> */}
+          {/*     <a className="hover:text-secondary-400">Regulamin</a> */}
+          {/*   </Link> */}
+          {/* </div> */}
         </div>
       </div>
     </footer>
