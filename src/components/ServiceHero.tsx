@@ -26,7 +26,7 @@ const HeroIcon = styled.div<{ image: IProps['image']; background: IProps['backgr
 
 const HeroTitle = styled.div<{ color: string }>`
   color: ${(props) => props.color};
-  ${tw`flex justify-center items-center max-w-5xl mx-auto h-full uppercase text-5xl text-center font-semibold md:text-7xl`}
+  ${tw`flex justify-center items-center max-w-5xl mx-auto h-full uppercase text-4xl text-center font-semibold md:text-7xl`}
 `;
 
 // Component
