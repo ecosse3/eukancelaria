@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import backgroundImage from '../assets/images/404.png';
+import backgroundImage from '../../public/assets/images/404.png';
 import Button from '../components/Button';
-import LogoSlogan from '../assets/images/logo-slogan.png';
+import LogoSlogan from '../../public/assets/images/logo-slogan.png';
 
 const NotFound: NextPage = () => (
   <main>
