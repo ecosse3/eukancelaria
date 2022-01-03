@@ -32,6 +32,11 @@ const Service = ({ service }: IProps) => {
           image={service.imagePath}
           title={service.name}
         />
+        {service.content ? (
+          <div className="relative max-w-3xl text-justify mx-4 md:mx-auto">
+            <div dangerouslySetInnerHTML={{ __html: service.content }} />
+          </div>
+        ) : null}
         {service.items && service.items.length > 0 ? (
           <div className="relative max-w-7xl mx-auto text-center">
             <h2 className="text-3xl text-gray-800">W zakres naszych usług wchodzi:</h2>
