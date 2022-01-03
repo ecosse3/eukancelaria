@@ -153,7 +153,9 @@ const services: IService[] = [
       '/assets/icons/odpowiedzialnosc-dyscyplinarna/odpowiedzialnosc_dyscyplinarna.png',
     cardSize: '1/2',
     backgroundColor: '#E8D277',
-    textColor: '#CB85AF'
+    textColor: '#CB85AF',
+    content:
+      '<p>W świetle art. 17 ust. 1 Konstytucji RP: w drodze ustawy można tworzyć samorządy zawodowe, reprezentujące osoby wykonujące zawody zaufania publicznego. Jedną z funkcji samorządów zawodowych jest sprawowanie pieczy nad należytym (czyt. prawidłowym) wykonywaniem zawodu - w granicach interesu publicznego i dla jego ochrony.</p><p class="mt-4">Za postępowanie sprzeczne z prawem lub zasadami etyki zawodowej, albo za zachowanie, które narusza godność zawodu, osoba wykonująca zawód zaufania publicznego ponosi odpowiedzialność dyscyplinarną/zawodową. Postępowanie z zakresu odpowiedzialności dyscyplinarnej/zawodowej jest postępowaniem represyjnym – nakładającym pewne sankcje (kary) za czyny, które wypełniają znamiona deliktów dyscyplinarnych. Przepisy prawa, w świetle których prowadzone są postępowania dyscyplinarne/odpowiedzialności zawodowej zostały zawarte w aktach normatywnych regulujących zasady funkcjonowania poszczególnych samorządów zawodowych. W kwestiach nieuregulowanych materią ustawową oraz aktami wewnętrznymi wydawanymi przez organy samorządowe stosuje się – odpowiednio - określone przepisy Kodeksu karnego oraz Kodeksu postępowania karnego. Jedną z naczelnych zasad proces karnego, transponowaną do postępowań dyscyplinarnych/odpowiedzialności zawodowej jest prawo, wyrażone w treści przepisu art. 6 k.p.k – prawo do obrony.</p><p class="mt-4">Kancelaria staje w obronie zapewnienia obwinionemu w procesie z zakresu odpowiedzialności dyscyplinarnej/zawodowej wszystkich dostępnych instrumentami prawa środków, do dochodzenia swoich praw oraz należytej obrony.</p><p class="mt-4">W zakres usług świadczonych przez Kancelarię wchodzą m.in. postępowania:</p><p class="mt-4">z zakresu odpowiedzialności zawodowej:</p><ul class="max-w-2xl text-gray-500 inline-block list-disc text-left pl-4 list-outside mt-4 mx-6"><li class="text-lg mt-2">lekarzy i lekarzy dentystów oraz lekarzy weterynarii</li><li class="text-lg mt-2">pielęgniarek i położnych</li><li class="text-lg mt-2">farmaceutów</li><li class="text-lg mt-2">diagnostów laboratoryjnych</li><li class="text-lg mt-2">fizjoterapeutów</li><li class="text-lg mt-2">psychologów</li></ul><p class="mt-4">oraz odpowiedzialności dyscyplinarnej:</p><ul class="max-w-2xl text-gray-500 inline-block list-disc text-left pl-4 list-outside mt-4 mx-6"><li class="text-lg mt-2">adwokatów</li><li class="text-lg mt-2">prokuratorów</li><li class="text-lg mt-2">sędziów</li><li class="text-lg mt-2">rzeczników patentowych</li></ul>'
   },
   {
     id: 8,
@@ -165,7 +167,9 @@ const services: IService[] = [
     imagePath: '/assets/icons/rodo/rodo.png',
     cardSize: '1/2',
     backgroundColor: '#FAEBFF',
-    textColor: '#8BC6D3'
+    textColor: '#8BC6D3',
+    content:
+      '<p>Kancelaria świadczy również usługi polegające na wdrażaniu obowiązujących w Unii Europejskiej przepisów dot. ochrony danych osobowych (RODO). Usługi Kancelarii polegają na przeprowadzeniu audytu w siedzibie Klienta w przedmiocie zakresu przetwarzania danych osobowych, zabezpieczeń fizycznych, technicznych i organizacyjnych mających chronić dane osobowe zgodnie z przepisami prawa. Po przeprowadzeniu audytu Kancelaria przygotowuje dokumentację zgodną z RODO – dostosowaną do każdego Klienta oraz przeprowadza szkolenia w zakresie ochrony danych osobowych.</p>'
   }
 ];
 
