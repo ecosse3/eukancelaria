@@ -192,6 +192,8 @@ const Header = ({ accent = 'black' }: IProps) => {
                             item.href && item.href.length > 0 ? (
                               <div key={item.name} className="flow-root">
                                 <a
+                                  target="_blank"
+                                  rel="noopener noreferrer"
                                   href={item.href}
                                   className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-white"
                                 >
@@ -227,8 +229,8 @@ const Header = ({ accent = 'black' }: IProps) => {
                             </ul>
                           </div>
                           <div className="inline-block group mt-2 text-sm font-medium text-secondary-400">
-                            <Link href="/blog">
-                              <a>
+                            <Link href={links.facebook}>
+                              <a target="_href" rel="noopener noreferrer">
                                 Zobacz wszystkie wpisy{' '}
                                 <span
                                   className="text-xl group-hover:ml-2 transition-all"
@@ -306,7 +308,7 @@ const Header = ({ accent = 'black' }: IProps) => {
             </Popover>
 
             {/* Kontakt */}
-            <Link passHref href="/kontakt">
+            <Link passHref href={links.facebook}>
               <MenuItem accent={accent}>Kontakt</MenuItem>
             </Link>
           </Popover.Group>
@@ -367,7 +369,7 @@ const Header = ({ accent = 'black' }: IProps) => {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                        className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-100"
                       >
                         <item.icon
                           className="flex-shrink-0 h-6 w-6 text-secondary-400"
