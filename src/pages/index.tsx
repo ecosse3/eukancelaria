@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Logo from '../assets/images/logo.png';
+import Logo from '../../public/assets/images/logo.png';
 import Button from '../components/Button';
 import ServiceCard, { TSize } from '../components/ServiceCard';
 import PostCard from '../components/PostCard';
@@ -54,7 +54,8 @@ const Home: NextPage = () => {
         {/* Hero */}
         <section
           id="hero"
-          className="relative w-full h-screen bg-no-repeat bg-cover bg-[position:80%] bg-[url('../assets/images/bg_mobile.jpg')] md:bg-[url('../assets/images/bg.jpg')]"
+          className="relative w-full h-screen bg-[#FBF9FE] bg-no-repeat bg-cover bg-[position:80%] bg-[url('/assets/images/bg_mobile.jpg')]
+          md:bg-[url('/assets/images/bg.jpg')] md:bg-cover xl:bg-[position:60%] xl:bg-contain"
         >
           <div className="flex max-w-7xl mx-auto w-full h-full place-items-center">
             <div className="animate mx-4 max-w-[10rem] lg:max-w-lg">
@@ -124,25 +125,7 @@ const Home: NextPage = () => {
             ))}
           </div>
         </section>
-        {/* Map */}
-        <section id="map" className="relative text-right max-h-[535px] h-full w-full">
-          <div className="relative overflow-hidden bg-transparent pointer-events-none">
-            <iframe
-              loading="lazy"
-              className="w-[110%] -mt-14 -ml-[46px]"
-              width="100%"
-              height="535"
-              id="gmap_canvas"
-              aria-label="Map"
-              src="https://www.google.com/maps/d/u/0/embed?mid=1iL9CSbyniVGmFayaPAof7i5jd_MBv-2-&output=embed&iwloc=near"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight={0}
-              marginWidth={0}
-            ></iframe>
-          </div>
-        </section>
-        <Footer />
+        <Footer withMap />
       </main>
     </React.Fragment>
   );
