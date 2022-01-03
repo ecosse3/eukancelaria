@@ -6,8 +6,11 @@ export interface IService {
   name: string;
   slug: string;
   href: string;
-  content?: string[];
+  items?: string[];
   icon: typeof ArrowCircleDownIcon;
   image: StaticImageData;
+  imagePath: string;
   cardSize?: TSize;
+  backgroundColor: string;
+  textColor: string;
 }
