@@ -10,11 +10,21 @@ const About: NextPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>Ewa Urbanowicz - Kancelaria Radcy Prawnego</title>
+        <title>Zespół - Ewa Urbanowicz - Kancelaria Radcy Prawnego</title>
         <meta
           property="og:title"
-          content="Ewa Urbanowicz - Kancelaria Radcy Prawnego"
+          content="Zespół - Ewa Urbanowicz - Kancelaria Radcy Prawnego"
           key="title"
+        />
+        <meta
+          name="description"
+          content="Ewa Urbanowicz to absolwentka Wydziału Prawa i Administracji Uniwersytetu Marii-Curie Skłodowskiej w Lublinie. Ukończyła aplikację radcowską w Okręgowej Izbie Radców Prawnych w Lublinie."
+          key="description"
+        />
+        <meta
+          property="og:description"
+          content="Ewa Urbanowicz to absolwentka Wydziału Prawa i Administracji Uniwersytetu Marii-Curie Skłodowskiej w Lublinie. Ukończyła aplikację radcowską w Okręgowej Izbie Radców Prawnych w Lublinie."
+          key="og-description"
         />
       </Head>
       <Header accent="white" />

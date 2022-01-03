@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -41,13 +41,23 @@ const recentPosts = [
 // Component
 const Home: NextPage = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <Head>
         <title>Ewa Urbanowicz - Kancelaria Radcy Prawnego</title>
         <meta
           property="og:title"
           content="Ewa Urbanowicz - Kancelaria Radcy Prawnego"
           key="title"
+        />
+        <meta
+          name="description"
+          content="Kancelaria Ewy Urbanowicz oferuje kompleksową obsługę prawną przedsiębiorców, jak i świadczy usługi prawne dla osób fizycznych."
+          key="description"
+        />
+        <meta
+          property="og:description"
+          content="Kancelaria Ewy Urbanowicz oferuje kompleksową obsługę prawną przedsiębiorców, jak i świadczy usługi prawne dla osób fizycznych."
+          key="og-description"
         />
       </Head>
       <Header />
@@ -132,7 +142,7 @@ const Home: NextPage = () => {
         </section>
         <Footer withMap />
       </main>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

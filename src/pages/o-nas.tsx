@@ -11,11 +11,21 @@ const About: NextPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>Ewa Urbanowicz - Kancelaria Radcy Prawnego</title>
+        <title>O nas - Ewa Urbanowicz - Kancelaria Radcy Prawnego</title>
         <meta
           property="og:title"
-          content="Ewa Urbanowicz - Kancelaria Radcy Prawnego"
+          content="O nas - Ewa Urbanowicz - Kancelaria Radcy Prawnego"
           key="title"
+        />
+        <meta
+          name="description"
+          content="Kancelaria Ewy Urbanowicz oferuje kompleksową obsługę prawną przedsiębiorców, jak i świadczy usługi prawne dla osób fizycznych."
+          key="description"
+        />
+        <meta
+          property="og:description"
+          content="Kancelaria Ewy Urbanowicz oferuje kompleksową obsługę prawną przedsiębiorców, jak i świadczy usługi prawne dla osób fizycznych."
+          key="og-description"
         />
       </Head>
       <Header accent="white" />

@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react';
+import { Fragment } from 'react';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
@@ -15,13 +15,19 @@ interface IProps {
 
 const Service = ({ service }: IProps) => {
   return (
-    <React.Fragment>
+    <Fragment>
       <Head>
-        <title>Ewa Urbanowicz - Kancelaria Radcy Prawnego</title>
+        <title>Ewa Urbanowicz - Kancelaria Radcy Prawnego - {service.name}</title>
         <meta
           property="og:title"
           content={`Ewa Urbanowicz - Kancelaria Radcy Prawnego - ${service.name}`}
           key="title"
+        />
+        <meta name="description" content={service.description || ''} key="description" />
+        <meta
+          property="og:description"
+          content={service.description || ''}
+          key="og-description"
         />
       </Head>
       <Header />
@@ -58,7 +64,7 @@ const Service = ({ service }: IProps) => {
         </div>
       </main>
       <Footer />
-    </React.Fragment>
+    </Fragment>
   );
 };
 
