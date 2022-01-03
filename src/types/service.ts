@@ -7,6 +7,7 @@ export interface IService {
   slug: string;
   href: string;
   items?: string[];
+  content?: string;
   icon: typeof ArrowCircleDownIcon;
   image: StaticImageData;
   imagePath: string;
