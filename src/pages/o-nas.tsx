@@ -27,6 +27,10 @@ const About: NextPage = () => {
           content="Kancelaria Ewy Urbanowicz oferuje kompleksową obsługę prawną przedsiębiorców, jak i świadczy usługi prawne dla osób fizycznych."
           key="og-description"
         />
+        <meta
+          name="keywords"
+          content="eukancelaria, Ewa Urbanowicz, kancelaria, radca prawny, Urbanowicz"
+        />
       </Head>
       <Header accent="white" />
       <main className="overflow-hidden">

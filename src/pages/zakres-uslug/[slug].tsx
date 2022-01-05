@@ -31,6 +31,10 @@ const Service = ({ service }: IProps) => {
           content={service.description || ''}
           key="og-description"
         />
+        <meta
+          name="keywords"
+          content="eukancelaria, Ewa Urbanowicz, kancelaria, radca prawny, Urbanowicz, usługa"
+        />
       </Head>
       <Header />
       <main className="mb-16">

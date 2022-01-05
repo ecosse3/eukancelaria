@@ -26,6 +26,10 @@ const About: NextPage = () => {
           content="Ewa Urbanowicz to absolwentka Wydziału Prawa i Administracji Uniwersytetu Marii-Curie Skłodowskiej w Lublinie. Ukończyła aplikację radcowską w Okręgowej Izbie Radców Prawnych w Lublinie."
           key="og-description"
         />
+        <meta
+          name="keywords"
+          content="eukancelaria, Ewa Urbanowicz, kancelaria, radca prawny, Urbanowicz"
+        />
       </Head>
       <Header accent="white" />
       <main className="overflow-hidden">

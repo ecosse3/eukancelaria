@@ -16,6 +16,10 @@ const NotFound: NextPage = () => (
         content="404 - Ewa Urbanowicz - Kancelaria Radcy Prawnego"
         key="title"
       />
+      <meta
+        name="keywords"
+        content="eukancelaria, Ewa Urbanowicz, kancelaria, radca prawny, Urbanowicz"
+      />
     </Head>
     <main>
       <div className="relative max-w-7xl mx-auto min-h-screen">
