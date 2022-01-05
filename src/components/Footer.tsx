@@ -34,7 +34,7 @@ const Footer = ({ withMap }: IProps) => (
         <div className="flex max-w-7xl mx-auto justify-center items-center lg:justify-between py-6">
           <div className="mr-12 hidden lg:block">
             <span className="flex items-center">
-              Bądź ze mną w kontakcie! Odwiedź moje media społecznościowe{' '}
+              Bądź z nami w kontakcie! Odwiedź nasze media społecznościowe{' '}
               <ArrowRightIcon className="ml-1 h-3 w-3" />
             </span>
           </div>
