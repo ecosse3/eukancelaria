@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import {
   InformationCircleIcon,
@@ -22,16 +22,18 @@ import services from '../data/services';
 import links from '../data/links';
 
 // Styles
-const MenuItem = styled.a(({ accent }: { accent: IProps['accent'] }) => [
-  tw`relative p-3 text-base uppercase font-rubik font-medium
+const MenuItem = styled.a(
+  ({ accent, sticky }: { accent: IProps['accent']; sticky: boolean }) => [
+    tw`relative p-3 text-base uppercase font-rubik font-medium
       text-primary transition-all duration-500
       before:content-[''] before:absolute before:h-[0.20rem] before:w-0
       before:bg-primary before:top-0 before:opacity-0 before:transition-all
       before:duration-500 hover:before:w-4/12 hover:before:opacity-100
       hover:transition-all hover:ease hover:duration-200
   `,
-  accent === 'white' && tw`text-white before:bg-white`
-]);
+    accent === 'white' && !sticky && tw`text-white before:bg-white`
+  ]
+);
 
 const about = [
   {
@@ -73,13 +75,16 @@ const callsToAction = [
 ];
 
 const suggestedPosts = [
-  { id: 1, name: 'Odmowa udzielenia urlopu okolicznościowego', href: '#' },
+  {
+    id: 1,
+    name: 'Kara umowna a jej wysokość',
+    href: 'https://www.facebook.com/eukancelaria/posts/111494871407875'
+  },
   {
     id: 2,
-    name: 'Czy żołnierz ma prawo do bycia offline?',
-    href: '#'
-  },
-  { id: 3, name: 'Czym jest upadłość konsumencka', href: '#' }
+    name: 'Zmiany w prawie o ruchu drogowym',
+    href: 'https://www.facebook.com/eukancelaria/posts/110808178143211'
+  }
 ];
 
 function classNames(...classes: string[]) {
@@ -93,19 +98,50 @@ interface IProps {
 
 // Component
 const Header = ({ accent = 'black' }: IProps) => {
+  const [sticky, setSticky] = useState(false);
+
+  const isSticky = () => {
+    const scrollTop = window.scrollY;
+    scrollTop >= 400 ? setSticky(true) : setSticky(false);
+  };
+
+  const getDesktopLogo = () => {
+    if (sticky) return <Image src={LogoSlogan} alt="" width={80} height={46} />;
+
+    if (accent === 'black')
+      return <Image src={Logo} alt="" width={907 / 4} height={376 / 4} />;
+
+    return <Image src={LogoWhite} alt="" width={907 / 4} height={376 / 4} />;
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', isSticky);
+
+    return () => {
+      window.removeEventListener('scroll', isSticky);
+    };
+  }, []);
+
   return (
-    <Popover as="header" className="absolute top-0 w-full z-20 bg-transparent">
+    <Popover
+      as="header"
+      className={classNames(
+        sticky
+          ? 'fixed bg-[#FBF9FE] shadow-header animate-fade-in-down duration-400'
+          : 'absolute bg-transparent',
+        'top-0 w-full z-20'
+      )}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
+          <div
+            className={classNames(
+              sticky ? 'justify-center' : 'justify-start',
+              'flex lg:w-0 lg:flex-1'
+            )}
+          >
             <span className="sr-only">Kancelaria Radcy Prawnego - Ewa Urbanowicz</span>
-            <div className="hidden lg:block">
-              {accent === 'black' ? (
-                <Image src={Logo} alt="" width={907 / 4} height={376 / 4} />
-              ) : (
-                <Image src={LogoWhite} alt="" width={907 / 4} height={376 / 4} />
-              )}
-            </div>
+            <div className="hidden lg:block">{getDesktopLogo()}</div>
             <Link passHref href="/">
               <a>
                 <div className="lg:hidden relative w-24 h-14">
@@ -133,7 +169,7 @@ const Header = ({ accent = 'black' }: IProps) => {
 
           <Popover.Group as="nav" className="hidden md:flex space-x-4">
             <Link passHref href="/">
-              <MenuItem {...{ accent }}>Strona główna</MenuItem>
+              <MenuItem {...{ accent, sticky }}>Strona główna</MenuItem>
             </Link>
             <Popover className="relative">
               {({ open }) => (
@@ -143,12 +179,12 @@ const Header = ({ accent = 'black' }: IProps) => {
                       'text-primary group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary-400'
                     )}
                   >
-                    <MenuItem as="span" accent={accent}>
+                    <MenuItem as="span" {...{ accent, sticky }}>
                       O Kancelarii
                     </MenuItem>
                     <ChevronDownIcon
                       className={classNames(
-                        accent === 'white' ? 'text-white' : 'text-primary',
+                        accent === 'white' && !sticky ? 'text-white' : 'text-primary',
                         'h-5 w-5'
                       )}
                       aria-hidden="true"
@@ -164,7 +200,7 @@ const Header = ({ accent = 'black' }: IProps) => {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute z-20 -ml-4 mt-8 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                    <Popover.Panel className="absolute z-20 -ml-4 mt-10 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {about.map((item) => (
@@ -220,7 +256,11 @@ const Header = ({ accent = 'black' }: IProps) => {
                               {suggestedPosts.map((post) => (
                                 <li key={post.id} className="text-base truncate">
                                   <Link href={post.href}>
-                                    <a className="font-medium text-gray-900 hover:text-secondary-400">
+                                    <a
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="font-medium text-gray-900 hover:text-secondary-400"
+                                    >
                                       {post.name}
                                     </a>
                                   </Link>
@@ -257,12 +297,12 @@ const Header = ({ accent = 'black' }: IProps) => {
                       'text-primary group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary-400'
                     )}
                   >
-                    <MenuItem as="span" accent={accent}>
+                    <MenuItem as="span" {...{ accent, sticky }}>
                       Zakres usług
                     </MenuItem>
                     <ChevronDownIcon
                       className={classNames(
-                        accent === 'white' ? 'text-white' : 'text-primary',
+                        accent === 'white' && !sticky ? 'text-white' : 'text-primary',
                         'h-5 w-5'
                       )}
                       aria-hidden="true"
@@ -278,7 +318,7 @@ const Header = ({ accent = 'black' }: IProps) => {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute z-20 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0">
+                    <Popover.Panel className="absolute z-20 left-1/2 transform -translate-x-1/2 mt-10 px-2 w-screen max-w-md sm:px-0">
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {services.map((item) => (
@@ -309,14 +349,16 @@ const Header = ({ accent = 'black' }: IProps) => {
 
             {/* Kontakt */}
             <Link passHref href={links.facebook}>
-              <MenuItem accent={accent}>Kontakt</MenuItem>
+              <MenuItem {...{ accent, sticky }}>Kontakt</MenuItem>
             </Link>
           </Popover.Group>
+
           <div className="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0">
             <Link href="callto:+48605357507">
               <a
                 className="ml-8 whitespace-nowrap inline-flex items-center justify-center
                 px-6 py-4 border border-transparent rounded-full shadow-sm text-base font-medium
+                animate-tada animation-delay-500
                 text-white bg-secondary-400 transition-transform hover:-translate-y-1 hover:shadow-slate-400 hover:bg-secondary-500"
               >
                 <PhoneIcon
