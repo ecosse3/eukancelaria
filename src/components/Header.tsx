@@ -129,7 +129,7 @@ const Header = ({ accent = 'black' }: IProps) => {
         sticky
           ? 'fixed bg-[#FBF9FE] shadow-header animate-fade-in-down duration-400'
           : 'absolute bg-transparent',
-        'top-0 w-full z-20'
+        'top-0 w-full z-50'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
