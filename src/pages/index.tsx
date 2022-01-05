@@ -1,8 +1,11 @@
 import { Fragment } from 'react';
-import type { NextPage } from 'next';
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import axios from 'axios';
+import pl from 'date-fns/locale/pl';
+import format from 'date-fns/format';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Logo from '../../public/assets/images/logo.png';
@@ -10,36 +13,25 @@ import Button from '../components/Button';
 import ServiceCard, { TSize } from '../components/ServiceCard';
 import PostCard from '../components/PostCard';
 import services from '../data/services';
+import { GRAPH_URL } from '../api/consts';
+import links from '../data/links';
+import { IPost } from '../types/post';
 
-const recentPosts = [
-  {
-    id: 1,
-    title: 'Odmowa udzielenia urlopu okolicznościowego',
-    description:
-      'Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.',
-    url: 'https://facebook.com/EwaUrbanowicz/post/1',
-    date: 2
-  },
-  {
-    id: 2,
-    title: 'Czy żołnierz ma prawo do bycia offline?',
-    description:
-      'Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Proin eget tortor risus. Donec rutrum congue leo eget malesuada.',
-    url: 'https://facebook.com/EwaUrbanowicz/post/2',
-    date: 5
-  },
-  {
-    id: 3,
-    title: 'Upadłość konsumencka - czym tak naprawdę jest',
-    description:
-      'Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat. Donec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.',
-    url: 'https://facebook.com/EwaUrbanowicz/post/2',
-    date: 6
-  }
-];
+type ImageType = {
+  id: string;
+  picture: string;
+};
+
+interface IProps {
+  recentPosts: IPost[];
+  images: ImageType[];
+}
+
+const capitalizeFirstLetter = (text: string) =>
+  text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 
 // Component
-const Home: NextPage = () => {
+const Home = ({ recentPosts, images }: IProps) => {
   return (
     <Fragment>
       <Head>
@@ -129,13 +121,21 @@ const Home: NextPage = () => {
           <h2 className="text-slate-600 text-3xl font-bold">Ostatnie wpisy</h2>
           <hr className="h-0.5 w-14 my-8 bg-black" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 lg:mx-0 gap-5 md:gap-10 lg:gap-14">
-            {recentPosts.map((post) => (
+            {recentPosts?.slice(0, 3).map((post) => (
               <PostCard
                 key={post.id}
-                title={post.title}
-                description={post.description}
-                url={post.url}
-                date={post.date}
+                id={post.id}
+                title={capitalizeFirstLetter(post.message.split('\n\n')[0])}
+                description={post.message.split('\n\n')[1]}
+                url={`${links.facebook}/posts/${post.id.split('_')[1]}`}
+                image={images.find((image: ImageType) => image.id === post.id)?.picture}
+                date={format(
+                  new Date(post.created_time),
+                  "dd MMMM yyyy 'o godz.' HH:MM",
+                  {
+                    locale: pl
+                  }
+                )}
               />
             ))}
           </div>
@@ -144,6 +144,40 @@ const Home: NextPage = () => {
       </main>
     </Fragment>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const recentPosts = await axios
+    .get(
+      `${GRAPH_URL}${process.env.PAGE_ID}/feed?limit=6&access_token=${process.env.ACCESS_TOKEN}`
+    )
+    .then((res) => res.data)
+    .catch((err) => console.log(err));
+
+  const ids =
+    (await recentPosts?.data
+      ?.filter((post: IPost) => post.message)
+      .map((post: IPost) => post.id)) || [];
+
+  const images: ImageType[] = [];
+
+  await Promise.all(
+    ids.map(async (id: string) => {
+      const image = await axios
+        .get(`${GRAPH_URL}${id}?fields=picture&access_token=${process.env.ACCESS_TOKEN}`)
+        .then((res) => res.data)
+        .catch((err) => console.log(err));
+
+      images.push({ id, picture: image.picture });
+    })
+  );
+
+  return {
+    props: {
+      recentPosts: recentPosts?.data?.filter((post: IPost) => post.message) || null,
+      images
+    }
+  };
 };
 
 export default Home;
