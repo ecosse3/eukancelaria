@@ -49,7 +49,7 @@ const About: NextPage = () => {
           </div>
         </div>
         {/* Ewa */}
-        <section className="flex flex-col max-w-7xl mx-auto pb-8 pt-28 items-center">
+        <section className="flex flex-col max-w-3xl mx-auto pb-8 pt-28 items-center">
           <h2 className="text-slate-600 text-2xl font-light font-roboto">Radca Prawny</h2>
           <h1 className="text-slate-600 text-3xl font-bold mt-1">Ewa Urbanowicz</h1>
           <hr className="h-0.5 w-14 my-8 bg-black" />
@@ -81,7 +81,7 @@ const About: NextPage = () => {
           </p>
         </section>
         {/* Tomasz */}
-        <section className="flex flex-col max-w-7xl mx-auto pb-16 pt-16 items-center">
+        <section className="flex flex-col max-w-3xl mx-auto pb-16 pt-16 items-center">
           <h2 className="text-slate-600 text-2xl font-light font-roboto">Radca Prawny</h2>
           <h1 className="text-slate-600 text-3xl font-bold mt-1">Tomasz Jakubiak</h1>
           <hr className="h-0.5 w-14 my-8 bg-black" />
@@ -103,7 +103,7 @@ const About: NextPage = () => {
             postępowania.
           </p>
 
-          <p className="text-xl text-slate-500 mx-4 md:mx-0 max-w-3xl mt-4">
+          <p className="text-xl text-slate-500 mx-4 md:mx-0 self-start max-w-3xl mt-4">
             Prywatnie jego pasją jest motoryzacja oraz sporty siłowe.
           </p>
         </section>
