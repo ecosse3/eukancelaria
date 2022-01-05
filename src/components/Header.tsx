@@ -106,12 +106,22 @@ const Header = ({ accent = 'black' }: IProps) => {
   };
 
   const getDesktopLogo = () => {
-    if (sticky) return <Image src={LogoSlogan} alt="" width={80} height={46} />;
+    if (sticky) return <Image src={LogoSlogan} alt="Logo" width={80} height={46} />;
 
     if (accent === 'black')
-      return <Image src={Logo} alt="" width={907 / 4} height={376 / 4} />;
+      return <Image src={Logo} alt="Logo" width={907 / 4} height={376 / 4} />;
 
-    return <Image src={LogoWhite} alt="" width={907 / 4} height={376 / 4} />;
+    return <Image src={LogoWhite} alt="Logo" width={907 / 4} height={376 / 4} />;
+  };
+
+  const getMobileLogo = () => {
+    if (sticky)
+      return <Image src={LogoSlogan} alt="Logo" layout="fill" objectFit="contain" />;
+
+    if (accent === 'black')
+      return <Image src={LogoSlogan} alt="Logo" layout="fill" objectFit="contain" />;
+
+    return <Image src={LogoSloganWhite} alt="Logo" layout="fill" objectFit="contain" />;
   };
 
   useEffect(() => {
@@ -144,18 +154,7 @@ const Header = ({ accent = 'black' }: IProps) => {
             <div className="hidden lg:block">{getDesktopLogo()}</div>
             <Link passHref href="/">
               <a>
-                <div className="lg:hidden relative w-24 h-14">
-                  {accent === 'black' ? (
-                    <Image src={LogoSlogan} alt="" layout="fill" objectFit="contain" />
-                  ) : (
-                    <Image
-                      src={LogoSloganWhite}
-                      alt=""
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  )}
-                </div>
+                <div className="lg:hidden relative w-24 h-14">{getMobileLogo()}</div>
               </a>
             </Link>
           </div>
