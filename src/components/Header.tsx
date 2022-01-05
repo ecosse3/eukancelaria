@@ -10,7 +10,7 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
+import Link, { LinkProps } from 'next/link';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import tw from 'twin.macro';
 import styled from 'styled-components';
@@ -20,6 +20,16 @@ import LogoSlogan from '../../public/assets/images/logo-slogan.png';
 import LogoSloganWhite from '../../public/assets/images/logo-slogan-white.png';
 import services from '../data/services';
 import links from '../data/links';
+
+const MyLink = (props: LinkProps & { children: React.ReactNode }) => {
+  const { href, children, ...rest } = props;
+
+  return (
+    <Link href={href}>
+      <a {...rest}>{children}</a>
+    </Link>
+  );
+};
 
 // Styles
 const MenuItem = styled.a(
@@ -203,7 +213,7 @@ const Header = ({ accent = 'black' }: IProps) => {
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {about.map((item) => (
-                            <Link key={item.name} href={item.href}>
+                            <Popover.Button as={Link} key={item.name} href={item.href}>
                               <a className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-100">
                                 <item.icon
                                   className="flex-shrink-0 h-6 w-6 text-secondary-400"
@@ -218,7 +228,7 @@ const Header = ({ accent = 'black' }: IProps) => {
                                   </p>
                                 </div>
                               </a>
-                            </Link>
+                            </Popover.Button>
                           ))}
                         </div>
 
@@ -321,7 +331,7 @@ const Header = ({ accent = 'black' }: IProps) => {
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {services.map((item) => (
-                            <Link key={item.name} href={item.href}>
+                            <Popover.Button as={MyLink} key={item.name} href={item.href}>
                               <a
                                 href={item.href}
                                 className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-100"
@@ -336,7 +346,7 @@ const Header = ({ accent = 'black' }: IProps) => {
                                   </p>
                                 </div>
                               </a>
-                            </Link>
+                            </Popover.Button>
                           ))}
                         </div>
                       </div>
