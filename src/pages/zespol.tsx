@@ -42,7 +42,7 @@ const About: NextPage = () => {
           xl:after:left-[20%] xl:after:top-[60%] xl:after:scale-50 xl:after:rotate-[18deg]
           2xl:after:left-[20%] 2xl:after:top-[40rem] 2xl:after:scale-50 2xl:after:rotate-[18deg]"
         >
-          <div className="flex flex-col max-w-7xl mx-4 lg:mx-auto w-full h-full rotate-0 text-center md:text-left md:rotate-[18deg] md:pt-72 xl:pt-[34rem]">
+          <div className="flex flex-col max-w-7xl mx-auto w-full h-full rotate-0 text-center md:text-left md:rotate-[18deg] md:pt-72 xl:pt-[34rem]">
             <h1 className="text-white text-5xl md:text-6xl mt-[20vh] md:mt-[25vh] mx-4">
               Zespół
             </h1>

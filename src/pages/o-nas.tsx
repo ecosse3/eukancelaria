@@ -42,13 +42,13 @@ const About: NextPage = () => {
           xl:after:left-[22%] xl:after:top-[60%] xl:after:scale-[.55]
           2xl:after:left-[22%] 2xl:after:top-[38rem] 2xl:after:scale-[.55]"
         >
-          <div className="flex flex-col max-w-7xl mx-4 lg:mx-auto w-full h-full rotate-0 text-center md:text-left md:rotate-[18deg] md:pt-72 xl:pt-[34rem]">
-            <h1 className="text-white text-5xl md:text-6xl mt-[20vh] md:mt-[25vh] mx-4">
+          <div className="flex flex-col max-w-7xl lg:mx-auto w-full h-full rotate-0 text-center md:text-left md:rotate-[18deg] md:pt-72 xl:pt-[34rem]">
+            <h1 className="text-white text-5xl md:text-6xl mt-[20vh] md:mt-[25vh]">
               O Kancelarii
             </h1>
             <Link href="/zespol">
               <a>
-                <Button className="mt-8 mx-4" background="secondary" size="big">
+                <Button className="mt-8" background="secondary" size="big">
                   Poznaj nasz zespół
                 </Button>
               </a>
