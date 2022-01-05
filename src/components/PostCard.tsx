@@ -1,6 +1,3 @@
-import Image from 'next/image';
-import DefaultPostImage from '../../public/assets/images/logo-slogan.png';
-
 interface IProps {
   id: string;
   title: string;
@@ -13,17 +10,20 @@ interface IProps {
 const PostCard = ({ title, description, url, date, image }: IProps) => {
   return (
     <div className="relative max-w-md pt-12 pb-16 px-8 bg-white ring-1 ring-secondary-100 shadow-lg rounded-lg my-10">
-      <div className="absolute -top-10 right-8 w-20 h-20 object-cover rounded-full ring-1 ring-offset-2 ring-secondary-100">
-        {image ? (
-          <Image
+      {image ? (
+        <div className="absolute -top-10 right-8 w-20 h-20 object-cover rounded-full ring-1 ring-offset-2 ring-secondary-100">
+          {/* NOTE: Have to use <img> because next.js doesn't support images domains wildcards yet. */}
+          {/* And facebook has a lot of different domains */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             alt={title}
-            className="object-fill rounded-full"
+            className="object-fill rounded-full w-20 h-20 bg-white"
             width={80}
             height={80}
-            src={image || DefaultPostImage}
+            src={image}
           />
-        ) : null}
-      </div>
+        </div>
+      ) : null}
       <div className="flex flex-col gap-2">
         <h2 className="text-primary text-2xl h-16 font-semibold line-clamp-2">{title}</h2>
         <h3 className="text-gray-600 font-roboto text-sm font-light">{date}</h3>
