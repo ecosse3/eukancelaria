@@ -358,7 +358,9 @@ const Header = ({ accent = 'black' }: IProps) => {
 
             {/* Kontakt */}
             <Link passHref href={links.facebook}>
-              <MenuItem {...{ accent, sticky }}>Kontakt</MenuItem>
+              <MenuItem {...{ accent, sticky }} target="_blank">
+                Kontakt
+              </MenuItem>
             </Link>
           </Popover.Group>
 
