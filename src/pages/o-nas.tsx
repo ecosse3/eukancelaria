@@ -11,7 +11,7 @@ const About: NextPage = () => {
   return (
     <Fragment>
       <Head>
-        <title>O nas - Ewa Urbanowicz - Kancelaria Radcy Prawnego</title>
+        <title>O nas - Ewa Urbanowicz - Kancelaria Radcy Prawnego - eukancelaria</title>
         <meta
           property="og:title"
           content="O nas - Ewa Urbanowicz - Kancelaria Radcy Prawnego"

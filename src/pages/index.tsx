@@ -35,7 +35,7 @@ const Home = ({ recentPosts, images }: IProps) => {
   return (
     <Fragment>
       <Head>
-        <title>Ewa Urbanowicz - Kancelaria Radcy Prawnego</title>
+        <title>Ewa Urbanowicz - Kancelaria Radcy Prawnego - eukancelaria</title>
         <meta
           property="og:title"
           content="Ewa Urbanowicz - Kancelaria Radcy Prawnego"

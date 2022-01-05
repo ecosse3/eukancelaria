@@ -17,7 +17,9 @@ const Service = ({ service }: IProps) => {
   return (
     <Fragment>
       <Head>
-        <title>Ewa Urbanowicz - Kancelaria Radcy Prawnego - {service.name}</title>
+        <title>
+          Ewa Urbanowicz - Kancelaria Radcy Prawnego - {service.name} - eukancelaria
+        </title>
         <meta
           property="og:title"
           content={`Ewa Urbanowicz - Kancelaria Radcy Prawnego - ${service.name}`}

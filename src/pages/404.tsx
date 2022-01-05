@@ -10,7 +10,7 @@ import LogoSlogan from '../../public/assets/images/logo-slogan.png';
 const NotFound: NextPage = () => (
   <Fragment>
     <Head>
-      <title>404 - Ewa Urbanowicz - Kancelaria Radcy Prawnego</title>
+      <title>404 - Ewa Urbanowicz - Kancelaria Radcy Prawnego - eukancelaria</title>
       <meta
         property="og:title"
         content="404 - Ewa Urbanowicz - Kancelaria Radcy Prawnego"
