@@ -152,7 +152,7 @@ export const getStaticProps: GetStaticProps = async () => {
       `${GRAPH_URL}${process.env.PAGE_ID}/feed?limit=6&access_token=${process.env.ACCESS_TOKEN}`
     )
     .then((res) => res.data)
-    .catch((err) => console.log(err));
+    .catch((err) => console.log('GET recentPosts', err));
 
   const ids =
     (await recentPosts?.data
@@ -166,7 +166,7 @@ export const getStaticProps: GetStaticProps = async () => {
       const image = await axios
         .get(`${GRAPH_URL}${id}?fields=picture&access_token=${process.env.ACCESS_TOKEN}`)
         .then((res) => res.data)
-        .catch((err) => console.log(err));
+        .catch((err) => console.log('GET post picture', err));
 
       images.push({ id, picture: image.picture });
     })
