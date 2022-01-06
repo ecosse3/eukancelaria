@@ -33,27 +33,27 @@ class MyDocument extends Document {
           <link
             rel="preload"
             as="style"
-            href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
           />
           <link
             rel="preload"
             as="style"
-            href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
           />
           <link
             rel="preload"
             as="style"
-            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
           />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
             media="print"
           />
           <noscript>
             <link
               rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+              href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
             />
           </noscript>
         </Head>
