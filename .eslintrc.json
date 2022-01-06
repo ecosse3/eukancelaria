@@ -47,6 +47,7 @@
     "import/no-cycle": 1,
     "import/no-unresolved": "off",
     "import/order": 1,
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "import/no-named-as-default-member": 0
   }
 }
