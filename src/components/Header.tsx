@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
 import { Popover, Transition } from '@headlessui/react';
 import {
   InformationCircleIcon,
@@ -134,6 +135,13 @@ const Header = ({ accent = 'black' }: IProps) => {
     return <Image src={LogoSloganWhite} alt="Logo" layout="fill" objectFit="contain" />;
   };
 
+  const trackMenuClick = (menuName: string) => {
+    ReactGA.event({
+      category: 'Navigation',
+      action: `Click: ${menuName}`
+    });
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', isSticky);
 
@@ -184,6 +192,7 @@ const Header = ({ accent = 'black' }: IProps) => {
               {({ open }) => (
                 <>
                   <Popover.Button
+                    onClick={() => trackMenuClick('O Kancelarii')}
                     className={classNames(
                       'text-primary group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary-400'
                     )}
@@ -302,6 +311,7 @@ const Header = ({ accent = 'black' }: IProps) => {
               {({ open }) => (
                 <>
                   <Popover.Button
+                    onClick={() => trackMenuClick('Zakres usług')}
                     className={classNames(
                       'text-primary group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-secondary-400'
                     )}
