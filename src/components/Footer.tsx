@@ -120,19 +120,9 @@ const Footer = ({ withMap }: IProps) => (
       <div className="max-w-7xl mx-auto py-10 text-center md:text-left">
         <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="">
-            <h6
-              className="
-            uppercase
-            font-semibold
-            mb-4
-            flex
-            items-center
-            justify-center
-            md:justify-start
-          "
-            >
+            <span className="uppercase font-semibold mb-4 flex items-center justify-center md:justify-start">
               O Kancelarii
-            </h6>
+            </span>
             <p className="max-w-sm mx-auto md:max-w-none">
               Kancelaria oferuje kompleksową obsługę prawną przedsiębiorców, jak i
               świadczy usługi prawne dla osób fizycznych.
@@ -145,7 +135,7 @@ const Footer = ({ withMap }: IProps) => (
             </p>
           </div>
           <div tw="flex flex-col justify-center mx-auto md:ml-20">
-            <h6 tw="uppercase font-semibold mb-4">Zakres usług</h6>
+            <span tw="uppercase font-semibold mb-4">Zakres usług</span>
             <div tw="grid grid-cols-2 px-6 md:(block px-0)">
               {services.map((service) => (
                 <p key={service.name} className="mt-4 md:first:mt-0 md:mt-4">
@@ -165,8 +155,8 @@ const Footer = ({ withMap }: IProps) => (
             </div>
           </div>
           <div className="flex flex-col items-center md:items-start">
-            <h4 className="text-base uppercase font-semibold mb-4">Newsletter</h4>
-            <h6 className="text-sm">Już wkrótce!</h6>
+            <span className="text-base uppercase font-semibold mb-4">Newsletter</span>
+            <span className="text-sm">Już wkrótce!</span>
             {/* <input */}
             {/*   type="text" */}
             {/*   name="name" */}
