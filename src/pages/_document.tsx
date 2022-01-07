@@ -34,26 +34,47 @@ class MyDocument extends Document {
             rel="preload"
             as="style"
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="stylesheet preload prefetch"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+            media="print"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="style"
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="stylesheet preload prefetch"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+            media="print"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="style"
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+            crossOrigin="anonymous"
           />
           <link
-            rel="stylesheet"
+            rel="stylesheet preload prefetch"
+            as="style"
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
             media="print"
+            crossOrigin="anonymous"
           />
           <noscript>
             <link
-              rel="stylesheet"
+              rel="stylesheet preload prefetch"
+              as="style"
               href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+              crossOrigin="anonymous"
             />
           </noscript>
         </Head>
