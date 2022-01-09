@@ -43,9 +43,9 @@ const About: NextPage = () => {
           after:absolute after:block after:content=[''] after:z-20 after:bg-[url(/assets/team/1.5x/Zasob1@1.5x.png)] after:bg-no-repeat
           after:left-0 after:right-0 after:top-60 after:scale-75 after:w-full after:h-full after:bg-contain after:mx-auto md:after:mx-0 md:after:right-auto
           md:after:left-[0%] md:after:top-[45%] md:after:scale-[.6] md:after:rotate-[18deg]
-          lg:after:left-[5%] lg:after:top-[40%] lg:after:scale-[.6] lg:after:rotate-[18deg]
-          xl:after:left-[20%] xl:after:top-[60%] xl:after:scale-50 xl:after:rotate-[18deg]
-          2xl:after:left-[20%] 2xl:after:top-[40rem] 2xl:after:scale-50 2xl:after:rotate-[18deg]"
+          lg:after:left-[25vw] lg:after:top-[40vh] lg:after:scale-50 lg:after:rotate-[18deg]
+          xl:after:left-[25vw] xl:after:top-[50vh] xl:after:scale-50 xl:after:rotate-[18deg]
+          2xl:after:left-[20vw] 2xl:after:top-[50vh] 2xl:after:scale-50 2xl:after:rotate-[18deg]"
         >
           <div className="flex flex-col max-w-7xl sm:mx-8 xl:mx-auto w-full h-full rotate-0 text-center md:text-left md:rotate-[18deg] md:pt-[27vh] lg:pt-[27vh] xl:pt-[35vh]">
             <h1 className="text-white text-5xl md:text-6xl mt-[20vh] md:mt-[25vh] mx-4">
