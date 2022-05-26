@@ -40,11 +40,13 @@ const About: NextPage = () => {
         <div
           className="relative w-full min-h-full h-[85vh] md:h-screen
           bg-gradient-to-br from-[#AF65D7] to-[#2C2947] rounded-b-[5rem] 
+          sm:-rotate-[18deg] sm:-mt-[27vh] sm:mb-60
           md:-rotate-[18deg] md:-mt-[27vh] md:mb-60
           lg:-rotate-[18deg] lg:-mt-[27vh]
           xl:-rotate-[18deg] xl:-mt-[35vh]
           after:absolute after:block after:content=[''] after:z-20 after:bg-[url(/assets/team/1.5x/Zasob1@1.5x.png)] after:bg-no-repeat
           after:left-0 after:right-0 after:top-60 after:scale-75 after:w-full after:h-full after:bg-contain after:mx-auto md:after:mx-0 md:after:right-auto
+          sm:after:left-[0%] sm:after:top-[45%] sm:after:scale-[.6] sm:after:rotate-[18deg]
           md:after:left-[0%] md:after:top-[45%] md:after:scale-[.6] md:after:rotate-[18deg]
           lg:after:left-[25vw] lg:after:top-[40vh] lg:after:scale-50 lg:after:rotate-[18deg]
           xl:after:left-[25vw] xl:after:top-[50vh] xl:after:scale-50 xl:after:rotate-[18deg]
