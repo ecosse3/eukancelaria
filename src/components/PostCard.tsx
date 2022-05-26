@@ -17,7 +17,7 @@ const PostCard = ({ title, description, url, date, image }: IProps) => {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             alt={title}
-            className="object-fill rounded-full w-20 h-20 bg-white"
+            className="object-cover rounded-full w-20 h-20 bg-white"
             width={80}
             height={80}
             src={image}
