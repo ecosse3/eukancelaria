@@ -2,8 +2,11 @@ import { Fragment } from 'react';
 import Head from 'next/head';
 import { NextPage } from 'next/types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PiotrImage from '../../public/assets/images/piotr.jpeg';
+import EwaImage from '../../public/assets/images/ewa.jpeg';
 
 // Component
 const About: NextPage = () => {
@@ -55,7 +58,18 @@ const About: NextPage = () => {
         </div>
         {/* Ewa */}
         <section className="flex flex-col max-w-3xl mx-auto pb-8 pt-28 items-center">
-          <h2 className="text-slate-600 text-2xl font-light font-roboto">Radca Prawny</h2>
+          <div className="w-48 h-48 rounded-full shadow-2xl shadow-black-500">
+            <Image
+              className="bg-[#f7f7f7] p-1 rounded-full bg-cover"
+              width={192}
+              height={192}
+              src={EwaImage}
+              alt=""
+            />
+          </div>
+          <h2 className="text-slate-600 text-2xl font-light font-roboto mt-5">
+            Radca Prawny
+          </h2>
           <h1 className="text-slate-600 text-3xl font-bold mt-1">Ewa Urbanowicz</h1>
           <hr className="h-0.5 w-14 my-8 bg-black" />
           <p className="text-xl text-slate-500 mx-4 md:mx-0 text-justify max-w-3xl">
@@ -85,31 +99,45 @@ const About: NextPage = () => {
             <FontAwesomeIcon icon={['far', 'smile']} aria-hidden="true" />
           </p>
         </section>
-        {/* Tomasz */}
+        {/* Piotr */}
         <section className="flex flex-col max-w-3xl mx-auto pb-16 pt-16 items-center">
-          <h2 className="text-slate-600 text-2xl font-light font-roboto">Radca Prawny</h2>
-          <h1 className="text-slate-600 text-3xl font-bold mt-1">Tomasz Jakubiak</h1>
+          <div className="w-48 h-48 rounded-full shadow-2xl shadow-black-500">
+            <Image
+              className="p-1 rounded-full bg-contain"
+              width={192}
+              height={192}
+              src={PiotrImage}
+              alt=""
+            />
+          </div>
+          <h2 className="text-slate-600 text-2xl font-light font-roboto mt-5">
+            Radca Prawny
+          </h2>
+          <h1 className="text-slate-600 text-3xl font-bold mt-1">Piotr Dąbek</h1>
           <hr className="h-0.5 w-14 my-8 bg-black" />
           <p className="text-xl text-slate-500 mx-4 md:mx-0 text-justify max-w-3xl">
             Absolwent Wydziału Prawa i Administracji Uniwersytetu Marii-Curie Skłodowskiej
-            w Lublinie. Szkolił się w Krajowej Szkole Sądownictwa i Prokuratury.
+            w Lublinie. Ukończył aplikację radcowską w Okręgowej Izbie Radców Prawnych w
+            Warszawie.
           </p>
 
           <p className="text-xl text-slate-500 mx-4 md:mx-0 text-justify max-w-3xl mt-4">
-            Specjalista w zakresie prawa cywilnego, prawa rodzinnego i opiekuńczego, prawa
-            pracy oraz postępowań dyscyplinarnych.
+            Specjalista w zakresie doradztwa prawnego przy realizacji projektów
+            współfinansowanych ze środków UE. Specjalizuje się również w prawie zamówień
+            publicznych, prawie gospodarczym, prawie pracy i prawie ochrony danych
+            osobowych.
           </p>
 
           <p className="text-xl text-slate-500 mx-4 md:mx-0 text-justify max-w-3xl mt-4">
-            Na co dzień w Kancelarii odpowiedzialny jest za reprezentowanie Klientów przed
-            sądami powszechnymi, obsługę prawną podmiotów gospodarczych i jednostek
-            sektora publicznego, a także za reprezentowanie obwinionych czy pokrzywdzonych
-            przed organami dyscyplinarnymi samorządów zawodowych, na każdym etapie
-            postępowania.
+            Na co dzień zajmuje się obsługą prawną podmiotów gospodarczych i jednostek
+            sektora publicznego, w tym również jako ekspert w projektach współpracy
+            międzynarodowej. Posiada wieloletnie doświadczenie w zakresie audytu
+            wewnętrznego. Legitymuje się uprawnieniami do prowadzenia audytu wewnętrznego
+            w jednostkach sektora finansów publicznych.
           </p>
 
           <p className="text-xl text-slate-500 mx-4 md:mx-0 self-start max-w-3xl mt-4">
-            Prywatnie jego pasją jest motoryzacja oraz sporty siłowe.
+            Prywatnie pasjonat muzyki gitarowej i górskich wędrówek.
           </p>
         </section>
       </main>
