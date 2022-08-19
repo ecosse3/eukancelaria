@@ -40,14 +40,15 @@ const About: NextPage = () => {
           md:-rotate-[18deg] md:-mt-[27vh] md:mb-60
           lg:-rotate-[18deg] lg:-mt-[27vh]
           xl:-rotate-[18deg] xl:-mt-[35vh]
+          2xl:-rotate-[18deg] 2xl:-mt-[45vh]
           after:absolute after:block after:content=[''] after:z-20 after:bg-[url(/assets/about/1x/Zasob3.png)] after:bg-no-repeat
           after:left-0 after:right-0 after:top-60 after:scale-75 after:w-full after:h-full after:bg-contain after:mx-auto 
           md:after:mx-0 md:after:right-auto md:after:left-[15%] md:after:top-[30%] md:after:scale-50 md:after:rotate-[18deg]
           lg:after:left-[30vw] lg:after:top-[35%] lg:after:scale-50
           xl:after:left-[25vw] xl:after:top-[60%] xl:after:scale-[.55]
-          2xl:after:left-[25vw] 2xl:after:top-[50vh] 2xl:after:scale-[.55]"
+          2xl:after:left-[25vw] 2xl:after:top-[60vh] 2xl:after:scale-[.55]"
         >
-          <div className="flex flex-col max-w-7xl sm:mx-8 xl:mx-auto w-full h-full rotate-0 text-center md:text-left md:rotate-[18deg] md:pt-[27vh] lg:pt-[27vh] xl:pt-[35vh]">
+          <div className="flex flex-col max-w-7xl sm:mx-8 xl:mx-auto w-full h-full rotate-0 text-center md:text-left md:rotate-[18deg] md:pt-[27vh] lg:pt-[27vh] xl:pt-[35vh] 2xl:pt-[45vh]">
             <h1 className="text-white text-5xl md:text-6xl mt-[20vh] md:mt-[25vh]">
               O Kancelarii
             </h1>
