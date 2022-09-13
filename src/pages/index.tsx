@@ -130,7 +130,9 @@ const Home = ({ recentPosts, images }: IProps) => {
                 key={post.id}
                 id={post.id}
                 title={capitalizeFirstLetter(post.message.split('\n\n')[0])}
-                description={post.message.split('\n\n')[1]}
+                description={
+                  post.message.split('\n\n')[1] || post.message.split('\n\n')[0]
+                }
                 url={`${links.facebook}/posts/${post.id.split('_')[1]}`}
                 image={images.find((image: ImageType) => image.id === post.id)?.picture}
                 date={format(
