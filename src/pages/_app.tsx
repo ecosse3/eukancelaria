@@ -1,5 +1,6 @@
 import '../styles/tailwind.css';
 import '../styles/bubbles.css';
+import { Analytics } from '@vercel/analytics/react';
 import { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import type { AppProps } from 'next/app';
@@ -24,6 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <div>
       <GlobalStyles />
       <Component {...pageProps} />
+      <Analytics />
     </div>
   );
 }
