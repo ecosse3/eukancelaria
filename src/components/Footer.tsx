@@ -118,8 +118,8 @@ const Footer = ({ withMap }: IProps) => (
         </div>
       </div>
       <div className="max-w-7xl mx-auto py-10 text-center md:text-left">
-        <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="">
+        <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="max-w-lg">
             <span className="uppercase font-semibold mb-4 flex items-center justify-center md:justify-start">
               O Kancelarii
             </span>
@@ -134,7 +134,7 @@ const Footer = ({ withMap }: IProps) => (
               </Link>
             </p>
           </div>
-          <div tw="flex flex-col justify-center mx-auto md:ml-20">
+          <div tw="flex flex-col justify-center mx-auto md:ml-auto">
             <span tw="uppercase font-semibold mb-4">Zakres usług</span>
             <div tw="grid grid-cols-2 px-6 md:(block px-0)">
               {services.map((service) => (
@@ -154,29 +154,29 @@ const Footer = ({ withMap }: IProps) => (
               ))}
             </div>
           </div>
-          <div className="flex flex-col items-center md:items-start">
-            <span className="text-base uppercase font-semibold mb-4">Newsletter</span>
-            <span className="text-sm">Już wkrótce!</span>
-            {/* <input */}
-            {/*   type="text" */}
-            {/*   name="name" */}
-            {/*   placeholder="Imię" */}
-            {/*   className="form-control block px-3 py-1.5 text-base font-normal text-gray-700 */}
-            {/* bg-white bg-clip-padding border border-solid border-gray-300 rounded transition */}
-            {/* ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:ring-2 focus:ring-secondary-400 focus:outline-none" */}
-            {/* /> */}
-            {/* <input */}
-            {/*   type="text" */}
-            {/*   name="email" */}
-            {/*   placeholder="twoj@email.com" */}
-            {/*   className="form-control block mt-4 px-3 py-1.5 text-base font-normal text-gray-700 */}
-            {/* bg-white bg-clip-padding border border-solid border-gray-300 rounded transition */}
-            {/* ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:ring-2 focus:ring-secondary-400 focus:outline-none" */}
-            {/* /> */}
-            {/* <Button className="mt-4" background="secondary"> */}
-            {/*   Zapisz się */}
-            {/* </Button> */}
-          </div>
+          {/* <div className="flex flex-col items-center md:items-start"> */}
+          {/*   <span className="text-base uppercase font-semibold mb-4">Newsletter</span> */}
+          {/*   <span className="text-sm">Już wkrótce!</span> */}
+          {/* <input */}
+          {/*   type="text" */}
+          {/*   name="name" */}
+          {/*   placeholder="Imię" */}
+          {/*   className="form-control block px-3 py-1.5 text-base font-normal text-gray-700 */}
+          {/* bg-white bg-clip-padding border border-solid border-gray-300 rounded transition */}
+          {/* ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:ring-2 focus:ring-secondary-400 focus:outline-none" */}
+          {/* /> */}
+          {/* <input */}
+          {/*   type="text" */}
+          {/*   name="email" */}
+          {/*   placeholder="twoj@email.com" */}
+          {/*   className="form-control block mt-4 px-3 py-1.5 text-base font-normal text-gray-700 */}
+          {/* bg-white bg-clip-padding border border-solid border-gray-300 rounded transition */}
+          {/* ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:ring-2 focus:ring-secondary-400 focus:outline-none" */}
+          {/* /> */}
+          {/* <Button className="mt-4" background="secondary"> */}
+          {/*   Zapisz się */}
+          {/* </Button> */}
+          {/* </div> */}
         </div>
       </div>
       {/* Panel */}
