@@ -184,7 +184,7 @@ const Footer = ({ withMap }: IProps) => (
         <div className="flex flex-col md:flex-row max-w-7xl mx-auto justify-between">
           {/* Left Panel */}
           <div className="order-2 md:order-1 mt-4 md:mt-0">
-            <span>© 2022 Wszelkie prawa zastrzeżone: </span>
+            <span>© 2023 Wszelkie prawa zastrzeżone: </span>
             <span className="text-white font-semibold">Ewa Urbanowicz</span>
           </div>
           {/* Right Panel */}
