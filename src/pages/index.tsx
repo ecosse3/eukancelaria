@@ -118,34 +118,36 @@ const Home = ({ recentPosts, images }: IProps) => {
             ))}
           </div>
         </section>
-        <section
-          id="recentPosts"
-          className="flex flex-col max-w-7xl mx-auto py-16 items-center"
-        >
-          <h2 className="text-slate-600 text-3xl font-bold">Ostatnie wpisy</h2>
-          <hr className="h-0.5 w-14 my-8 bg-black" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 lg:mx-0 gap-5 md:gap-10 lg:gap-14">
-            {recentPosts?.slice(0, 3).map((post) => (
-              <PostCard
-                key={post.id}
-                id={post.id}
-                title={capitalizeFirstLetter(post.message.split('\n\n')[0])}
-                description={
-                  post.message.split('\n\n')[1] || post.message.split('\n\n')[0]
-                }
-                url={`${links.facebook}/posts/${post.id.split('_')[1]}`}
-                image={images.find((image: ImageType) => image.id === post.id)?.picture}
-                date={format(
-                  new Date(post.created_time),
-                  "dd MMMM yyyy 'o godz.' HH:MM",
-                  {
-                    locale: pl
+        {recentPosts?.length > 0 && (
+          <section
+            id="recentPosts"
+            className="flex flex-col max-w-7xl mx-auto py-16 items-center"
+          >
+            <h2 className="text-slate-600 text-3xl font-bold">Ostatnie wpisy</h2>
+            <hr className="h-0.5 w-14 my-8 bg-black" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 lg:mx-0 gap-5 md:gap-10 lg:gap-14">
+              {recentPosts?.slice(0, 3).map((post) => (
+                <PostCard
+                  key={post.id}
+                  id={post.id}
+                  title={capitalizeFirstLetter(post.message.split('\n\n')[0])}
+                  description={
+                    post.message.split('\n\n')[1] || post.message.split('\n\n')[0]
                   }
-                )}
-              />
-            ))}
-          </div>
-        </section>
+                  url={`${links.facebook}/posts/${post.id.split('_')[1]}`}
+                  image={images.find((image: ImageType) => image.id === post.id)?.picture}
+                  date={format(
+                    new Date(post.created_time),
+                    "dd MMMM yyyy 'o godz.' HH:MM",
+                    {
+                      locale: pl
+                    }
+                  )}
+                />
+              ))}
+            </div>
+          </section>
+        )}
         <Footer withMap />
       </main>
     </Fragment>
