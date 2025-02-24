@@ -130,7 +130,7 @@ const Footer = ({ withMap }: IProps) => (
             <p className="mt-4">
               Wykonanie:{' '}
               <Link href="https://www.linkedin.com/in/lukasz-kurpiewski/">
-                <a className="hover:text-secondary-400">Łukasz Kurpiewski</a>
+                <a className="hover:text-secondary-400">ENATIV Łukasz Kurpiewski</a>
               </Link>
             </p>
           </div>
